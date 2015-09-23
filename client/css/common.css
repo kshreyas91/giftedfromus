@@ -1,0 +1,91 @@
+.campaign-header {
+    margin: 40px;
+    text-align: center;
+}
+
+.campaign-header h1,
+h2{
+	font-weight:bold;
+	color:#33032F;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.campaign-header h1 {
+    /*font-family: "Arial Black", "sans-serif";*/
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 1px;
+}
+
+.navbar-default {
+	background-color: #fff;
+}
+
+.navbar-default .navbar-brand {
+	font-weight: bold;
+	color: #8D6B94;
+}
+
+.bordered-box {
+	border-style: solid;
+	border-width: 12px;
+	border-color: #D8D8D8;
+	border-radius: 6px;
+	padding: 20px;
+
+}
+
+.invite-box{
+	padding-top:10px;
+	background-color: #D8D8D8;
+	border-radius: 6px;
+
+}
+
+.pledge{
+	font-weight: bold;
+	line-height: 40px;
+}
+
+.progress-bar{
+	background-color: #8D6B94;
+}
+
+.list-group-item{
+	background-color: transparent;
+	border: 0px;
+	
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 960px;
+  }
+}
+
+.inner-bg {
+    padding: 120px 0 170px 0;
+}
+
+.create-row{
+	margin-top: 100px;
+}
+
+.centered
+{
+    text-align:center;
+}
+
+.text-right {
+  float:right;
+}

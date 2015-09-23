@@ -1,0 +1,26 @@
+<template name="componentHeader">
+
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="create.html">GiftedByUs </a>
+              </div>
+              <p class="navbar-text hidden-xs">Give smarter gifts.</p>
+              <ul class="nav navbar-nav navbar-right">
+            
+            {{#if currentUser}}
+            <li><a href="#">Welcome {{name}} </a></li>
+            <li><a href="#" class="logout">Logout</a></li>
+            {{/if}}
+          </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+</template>
+
+
+

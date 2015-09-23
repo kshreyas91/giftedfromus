@@ -1,0 +1,30 @@
+body {
+	background-image:url("../images/create_bg.jpg");
+	background-size: cover;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 960px;
+  }
+}
+
+.create-row{
+	margin-top: 60px;
+}
+
+.create-header{
+	margin-top: 80px;
+}
+
+.form-box{
+	padding: 30px;
+	background: rgba(255, 255, 255, 0.75);
+	border-radius:6px;
+}
+
+.btn-create {
+  color: #fff;
+  background-color: #8D6B94;
+  border-color: #33032F;
+}

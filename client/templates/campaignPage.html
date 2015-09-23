@@ -1,0 +1,85 @@
+<template name="campaignPage">
+
+<div class="container">
+	{{#with data}}
+        <div class = "row">
+          <div class="campaign-header">
+            <h1>{{name}} Birthday Bash!</h1>
+            <p class="lead"><strong>Birthday:</strong> {{date}}  |   <strong>Campaign Ends:</strong> {{endDate}} </p>
+
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-md-8">
+                <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded" >
+              </div>
+              <div class="bordered-box col-md-4">
+               <h2><small>Lets Celebrate {{name}}</small></h2>
+
+               <p> {{description}}</p>
+
+               <h3 class = "pledge">$99.42  <small>pledged</small></h3>
+
+               <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                  Campaign Ends on {{endDate}}
+                </div>
+               </div>
+
+               <div class = "centered">
+              <p><a class="btn btn-lg btn-success" href="#" role="button">Pledge Today!</a></p>
+            </div>
+            </div>
+          </div>
+
+          <br><br>
+        
+        <div class = "row">
+          <div class="col-md-8">
+            <h4>Gift Suggestions</h4>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+              <h3 class="panel-title">Eau de Bacon Perfume ($32.67)</h3>
+
+            </div>
+            <div class="panel-body">
+              I'm sure Betty would love this!
+            </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+              <h3 class="panel-title">Bacon of the Month Club ($145.95)</h3>
+            </div>
+            <div class="panel-body">
+              Is Betty already a member?
+            </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+              <h3 class="panel-title">Jamón ibérico (Iberian Ham) ($450.00)</h3>
+            </div>
+            <div class="panel-body">
+              If we get her this, she better invite us over for dinner! 
+            </div>
+            </div>
+
+
+          </div>
+          <div class="col-md-4 invite-box">
+            <h4>Invite List (5)</h4>
+                <ul class="list-group">
+                  <li class="list-group-item"><img class="profilepic" src="/img/users/profile1.png">Peter Prosciutto</li>
+                  <li class="list-group-item"><img class="profilepic" src="/img/users/profile2.png">Sal Sausage</li>
+                  <li class="list-group-item"><img class="profilepic" src="/img/users/profile3.png">Timothy Tenderloin</li>
+                  <li class="list-group-item"><img class="profilepic" src="/img/users/profile4.png">Freddy Filet</li>
+                  <li class="list-group-item"><img class="profilepic" src="/img/users/profile5.png">Kim Kielbasa</li>
+                </ul>
+          </div>
+        </div>
+{{/with}}
+      </div>
+      
+</template>
