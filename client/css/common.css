@@ -1,3 +1,24 @@
+img.profilepic {
+  margin: 0 4px;
+  width: 25px;
+  height: 25px;
+}
+
+.container {
+	padding-left: 0px;
+	padding-right:0px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.container .header {
+	height: 0px;
+}
+
+.navbar {
+	border-radius:0px;
+}
+
 .campaign-header {
     margin: 40px;
     text-align: center;
@@ -9,6 +30,14 @@ h2{
 	color:#33032F;
 }
 
+.navbar-default .navbar-nav > li > a {
+	color: #8D6B94;
+}
+
+.h1 {
+	margin: 0;
+}
+
 h1,
 .h1,
 h2,
@@ -16,7 +45,12 @@ h2,
 h3,
 .h3 {
   margin-top: 0px;
-  margin-bottom: 10px;
+  /*margin-bottom: 10px;*/
+}
+
+
+.list-group-item {
+	padding: 3px 3px;	
 }
 
 .campaign-header h1 {
@@ -49,7 +83,8 @@ h3,
 	padding-top:10px;
 	background-color: #D8D8D8;
 	border-radius: 6px;
-
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
 .pledge{
@@ -67,11 +102,18 @@ h3,
 	
 }
 
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
   .container {
     width: 960px;
   }
-}
+}*/
+
+.container .content {
+        text-align: left;
+        padding: 12px;
+        max-width: 948px;
+        margin: 32px auto 0 auto;
+    }
 
 .inner-bg {
     padding: 120px 0 170px 0;
