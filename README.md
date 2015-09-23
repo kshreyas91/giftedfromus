@@ -1,1 +1,2 @@
-A simple, easy to use collaborate gifting platform
+#  giftedfromus
+Collaborative Gifting 
