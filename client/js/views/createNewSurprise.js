@@ -15,8 +15,8 @@ Meteor.startup(function() {
       var createdBy = Meteor.userId();
 
       var id= Surprises.insert({title: formCampaignTitle, name: formGifteeName, description: formCampaignDesc, date: formCampaignDate, endDate: formCampaignDate, createdBy: createdBy});
-      document.getElementById('showPublicURL').innerHTML = (location.origin + "/campaign/" +id);
-
+      //document.getElementById('showPublicURL').innerHTML = (location.origin + "/campaign/" +id);
+      window.location.href = (location.origin + "/campaign/" +id);
     },
   };
 
