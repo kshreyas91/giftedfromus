@@ -13,6 +13,7 @@ Meteor.startup(function() {
 
 
   Template.campaignPage.helpers({
+    publicURL: document.URL,
     data: function() {
       return Surprises.findOne({
         _id: getId()

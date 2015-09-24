@@ -68,8 +68,13 @@
           </div>
           <div class="col-md-4">
             <div class="row invite-box">
-              <h4>Sharable Link</h4>
-              <p>http://URL{{id}}</p>
+              <h4>Public Link</h4>
+              <form class="form-inline">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="publiclink" value="{{publicURL}}">
+                </div>
+                <button type="button" class="btn btn-default">Copy Link</button>
+              </form>
             </div>
             <br>
             <div class="row invite-box">
