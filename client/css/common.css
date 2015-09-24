@@ -85,6 +85,7 @@ h3,
 	border-radius: 6px;
 	padding-right: 15px;
 	padding-left: 15px;
+	padding-bottom: 15px;
 }
 
 .pledge{
@@ -102,6 +103,9 @@ h3,
 	
 }
 
+.list-group {
+	margin-bottom:0px;
+}
 /*@media (min-width: 1200px) {
   .container {
     width: 960px;
