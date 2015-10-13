@@ -44,6 +44,7 @@ this.Routes.prototype = {
     Router.route('/', function () {
         me.render(this, Template.home);
     });
+
     Router.route('/createNewSurprise', function () {
         me.render(this, Template.createNewSurprise);
     });
