@@ -101,21 +101,7 @@
                 <h4 class="modal-title" id="myModalLabel">Pledge Today!</h4>
               </div>
               <div class="modal-body">
-                <div class="form-top">
-                  <form  class="pledge-form">
-                    <div class="form-group">
-                      <label class="sr-only" for="form-pledge-amount">Pledge Amount</label>
-                      <div class="input-group"> 
-                      <span class="input-group-addon">$</span>
-                      <input type="number" name="formPledgeAmount" value="25" min="0" step="1" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" id="form-pledge-amount" />
-                    </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="submit" class="btn btn-success">Pledge</button>
-                    </div>
-                  </form>
-                </div>
+                {{> pledge}}
               </div>
            </div>
           </div>
@@ -129,30 +115,8 @@
                 <h4 class="modal-title" id="myModalLabel">Suggest New Gift</h4>
               </div>
               <div class="modal-body">
-                <div class="form-top">
-                  <form  class="suggest-form">
-                  <div class="form-group">
-                    <label class="sr-only" for="form-suggest-name">Gift Name</label>
-                    <input type="text" name="formSuggestName" placeholder="Gift Name" class="form-control" id="form-suggest-name">
-                  </div>
-                  <div class="form-group">
-                    <label class="sr-only" for="form-suggest-price">Price</label>
-                    <div class="input-group"> 
-                      <span class="input-group-addon">$</span>
-                      <input type="number" name="formSuggestPrice" value="200.00" min="0" step=".01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" id="form-suggest-price" />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="sr-only" for="form-suggest-desc">Gift Description</label>
-                    <textarea name="form-suggest-desc" placeholder="Gift Description" class="form-suggest-desc form-control" id="formSuggestDesc"></textarea>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Suggest Gift</button>
-                  </div>
-                </form>
+                {{> pledge}}
               </div>
-                </div>
               </div>
            </div>
           </div>
