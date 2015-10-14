@@ -30,7 +30,8 @@
                </div>
 
                <div class = "centered">
-              <p><a class="btn btn-lg btn-success" href="#" role="button">Pledge Today!</a></p>
+              <p><a class="btn btn-lg btn-success" role="button" data-toggle="modal" data-target="#pledgeMoney">Pledge Today!</a></p>
+              <p><a class="btn btn-default" role="button" data-toggle="modal" data-target="#suggestGift">Suggest Gift</a></p>
             </div>
             </div>
           </div>
@@ -93,6 +94,72 @@
             </div>
           </div>
         </div>
+        <!-- PLEDGE MONEY - Frank -->
+        <div class="modal fade" id="pledgeMoney" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Pledge Today!</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-top">
+                  <form  class="pledge-form">
+                    <div class="form-group">
+                      <label class="sr-only" for="form-pledge-amount">Pledge Amount</label>
+                      <div class="input-group"> 
+                      <span class="input-group-addon">$</span>
+                      <input type="number" name="formPledgeAmount" value="25" min="0" step="1" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" id="form-pledge-amount" />
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-success">Pledge</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+           </div>
+          </div>
+        </div>
+        <!-- SUGGEST NEW GIFT - Frank -->
+        <div class="modal fade" id="suggestGift" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Suggest New Gift</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-top">
+                  <form  class="suggest-form">
+                  <div class="form-group">
+                    <label class="sr-only" for="form-suggest-name">Gift Name</label>
+                    <input type="text" name="formSuggestName" placeholder="Gift Name" class="form-control" id="form-suggest-name">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="form-suggest-price">Price</label>
+                    <div class="input-group"> 
+                      <span class="input-group-addon">$</span>
+                      <input type="number" name="formSuggestPrice" value="200.00" min="0" step=".01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" id="form-suggest-price" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="form-suggest-desc">Gift Description</label>
+                    <textarea name="form-suggest-desc" placeholder="Gift Description" class="form-suggest-desc form-control" id="formSuggestDesc"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Suggest Gift</button>
+                  </div>
+                </form>
+              </div>
+                </div>
+              </div>
+           </div>
+          </div>
+
+
 {{/with}}
       </div>
       
