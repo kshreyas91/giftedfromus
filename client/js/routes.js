@@ -41,9 +41,10 @@ this.Routes.prototype = {
   define: function() {
     var me = this;
 
-    Router.route('/', function () {
+    Router.route('/', {name:'home', template:'home'}, function () {
         me.render(this, Template.home);
     });
+
     Router.route('/createNewSurprise', function () {
         me.render(this, Template.createNewSurprise);
     });
