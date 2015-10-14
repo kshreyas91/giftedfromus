@@ -7,9 +7,6 @@ accounts-ui
 iron:router
 nemo64:bootstrap
 less
-<<<<<<< HEAD
-joshowens:shareit
-=======
 standard-minifiers
 meteor-base
 mobile-experience
@@ -24,4 +21,3 @@ random
 ejson
 spacebars
 check
->>>>>>> 59767b08336ce553678ea701c2cf71499dbb02f1
