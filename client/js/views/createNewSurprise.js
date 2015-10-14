@@ -1,5 +1,5 @@
 /*
- * View logic for the Cars page
+ * View logic for the createNewSurprise page
  */
 
 Meteor.startup(function() {
@@ -19,5 +19,6 @@ Meteor.startup(function() {
       window.location.href = (location.origin + "/campaign/" +id);
     },
   };
+
 
 });
