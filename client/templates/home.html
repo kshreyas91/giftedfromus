@@ -1,29 +1,11 @@
 <template name="home">
-	<div id="page_home" class="page">
+	<div id="page_home">
     {{#if currentUser}}
         {{> userDashboard}}
     {{else}}
         
-       <div class="" id="loginModal">
-        
-        <h2>Welcome to giftedby.us. Its an easy way to collaborate to plan gifiting!</h2>
-    </div>
-    <div class="modal-body">
-        <div class="well">
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
-                <li><a href="#create" data-toggle="tab">Create Account</a></li>
-            </ul>
-            <div id="myTabContent" class="tab-content">
-                <div class="tab-pane active in" id="login">
-                    {{> login}}              
-                </div>
-                <div class="tab-pane fade" id="create">
-                    {{> register}}
-                </div>
-            </div>
-        </div>
-    </div>  
+        {{> main}}
+    
     {{/if}}
 	</div> 
 

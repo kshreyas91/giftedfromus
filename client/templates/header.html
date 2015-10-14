@@ -1,37 +1,72 @@
 
 <template name="componentHeader">
 
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="navbar-header">
-                <a class="navbar-brand" href="/">GiftedBy.Us </a>
-              </div>
+
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="top-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+              <a class="navbar-brand" href="{{pathFor 'Home'}}">GiftedBy.Us </a>
               <p class="navbar-text hidden-xs">Give smarter gifts.</p>
-              <ul class="nav navbar-nav navbar-right">
+              
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
             {{#if currentUser}}
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="profilepic" src="/img/users/profile1.png"> {{name}} <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">My Campaigns</a></li>
-                <li><a href="#">Settings</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#startANewCampaign" data-toggle="modal">Start a New Campaign</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Log Out</a></li>
-              </ul>
+            <li class="dropdown nav navbar-nav navbar-right">
+              <p class="navbar-text">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="profilepic" src="/img/users/profile1.png"> {{name}} <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{pathFor 'Home'}}">MY CAMPAIGNS</a></li>
+                  <li><a href="#">SETTINGS</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#startANewCampaign" data-toggle="modal">START NEW CAMPAIGN</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">LOG OUT</a></li>
+                </ul>
+              </p>
             </li>
             {{else}}
-            <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Log In</a></li>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#signUp" data-toggle="modal">SIGN UP</a></li>
+              <li><a href="#logIn" data-toggle="modal">LOG IN</a></li>
+            </ul>
             {{/if}}
             
-          </ul>
             </div>
-          </div>
         </div>
       </nav>
+
+      <!-- SIGN UP LOG IN MODALS -->
+      <div class="modal fade" id="signUp" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content row-fluid">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+          </div>
+          <div class="modal-body">
+              {{> register}}
+          </div>
+        </div>
+        </div>
+      </div> 
+
+      <div class="modal fade" id="logIn" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content row-fluid">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Log In</h4>
+          </div>
+          <div class="modal-body">
+              {{> login}}
+          </div>
+        </div>
+        </div>
+      </div> 
+
+
 
       <!-- POP UP CREATE CAMPAIGN - Frank -->
       <div class="modal fade" id="startANewCampaign" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -43,37 +78,14 @@
             </div>
             <div class="modal-body">
               <div class="form-top">
-                <form  class="registration-form">
-                  <div class="form-group">
-                    <label class="sr-only" for="form-campaign-title">Campaign Title</label>
-                    <input type="text" name="formCampaignTitle" placeholder="Gift Campaign Title" class="form-control" id="form-campaign-title">
-                  </div>
-                  <div class="form-group">
-                    <label class="sr-only" for="form-giftee-name">Giftee Name</label>
-                    <input type="text" name="formGifteeName" placeholder="Giftee Name" class="form-control" id="form-giftee-name">
-                  </div>
-                  <div class="form-group">
-                    <label class="sr-only" for="form-birthday">Birthday</label>
-                    <input type="text" name="formBirthday" placeholder="Giftee Birthday" class=" form-control" id="form-birthday">
-                  </div>
-                  <div class="form-group">
-                    <label class="sr-only" for="form-campaign-date">Campaign End Date</label>
-                    <input type="text" name="formCampaignDate" placeholder="Campaign End Date" class="form-control" id="form-campaign-date">
-                  </div>
-                  <div class="form-group">
-                    <label class="sr-only" for="form-campaign-desc">Campaign Description</label>
-                    <textarea name="form-campaign-desc" placeholder="Campaign Description" class="form-campaign-desc form-control" id="formCampaignDesc"></textarea>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Start Campaign</button>
-                  </div>
-                </form>
+                {{> createNewSurprise}}
               </div>
             </div>
          </div>
         </div>
       </div>
+
+
 
 </template>
 
