@@ -6,9 +6,8 @@ img.profilepic {
 
 .container {
 	padding-left: 0px;
-	padding-right:0px;
-	width: 100%;
-	margin: 0 auto;
+	padding-right: 20px;
+	margin: 60px auto;
 }
 
 .container .header {
@@ -19,15 +18,22 @@ img.profilepic {
 	border-radius:0px;
 }
 
+.navbar .navbar-right{
+	margin-right: 15px;
+}
+
 .campaign-header {
     margin: 40px;
     text-align: center;
 }
 
-.campaign-header h1,
-h2{
-	font-weight:bold;
-	color:#33032F;
+.bottom-aligner {
+	font-weight: bold;
+	color:#202724;
+	height: 80px;
+	vertical-align: bottom;
+	text-align: center;
+	display: inline-block;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -40,25 +46,9 @@ h2{
 	font-weight: bold;
 }
 
-.navbar-default .navbar-text {
-	color: #202724;
-	font-style: italic;
-}
-
-.h1 {
-	margin: 0;
-}
-
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3 {
-  margin-top: 0px;
-  /*margin-bottom: 10px;*/
-}
-
+.navbar-default .navbar-nav > .open > a, a:focus {
+	background-color: transparent;
+}	
 
 .list-group-item {
 	padding: 3px 3px;	
@@ -74,8 +64,9 @@ h3,
 
 .navbar-default {
 	width: 100%;
-	background-color: transparent;
-    position:fixed;
+	background-image: url("../img/background.png");  
+	background-size: cover;  
+	position:fixed;
     top:0;
     left:0;
     transition: top .2s ease-in;
@@ -118,7 +109,6 @@ h3,
 .list-group-item{
 	background-color: transparent;
 	border: 0px;
-	
 }
 
 .list-group {
@@ -131,22 +121,20 @@ h3,
 }*/
 
 .container .content {
-        text-align: left;
-        padding: 12px;
-        max-width: 948px;
-        margin: 32px auto 0 auto;
-    }
+    text-align: center;
+    padding: 12px;
+    margin: 32px auto 0 auto;
+}
 
 .inner-bg {
     padding: 120px 0 170px 0;
 }
 
-.create-row{
+.create-row {
 	margin-top: 100px;
 }
 
-.centered
-{
+.centered {
     text-align:center;
 }
 
@@ -157,11 +145,12 @@ h3,
 .jumbotron {
   background-image: url("../img/background.png");
   background-size: cover;
+  margin-bottom: 10px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .top-header {
-	width: 60%;
+	width: 70%;
 	margin: 0 auto;
 }
 }
