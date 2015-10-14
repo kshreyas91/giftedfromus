@@ -50,9 +50,6 @@ this.Routes.prototype = {
     Router.route('/testData/:id', function () {
         me.render(this, Template.testData, false, {id: this.params.id});
     });
-    Router.route('/cars/car/:id', function () {
-        me.render(this, Template.carsDetail, false, {id: this.params.id});
-    });
     Router.route('/campaign/:id', function () {
         me.render(this, Template.campaignPage, false, {id: this.params.id});
     });

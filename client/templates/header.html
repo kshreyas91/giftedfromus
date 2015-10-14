@@ -1,3 +1,4 @@
+
 <template name="componentHeader">
 
       <nav class="navbar navbar-default" role="navigation">
@@ -5,14 +6,17 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="navbar-header">
-                <a class="navbar-brand" href="create.html">GiftedByUs </a>
+                <a class="navbar-brand" href="/">GiftedBy.Us </a>
               </div>
               <p class="navbar-text hidden-xs">Give smarter gifts.</p>
               <ul class="nav navbar-nav navbar-right">
             
             {{#if currentUser}}
             <li><a href="#">Welcome {{name}} </a></li>
-            <li><a href="#" class="logout">Logout</a></li>
+            <li><a href="#" class="logout">Log Out</a></li>
+            {{else}}
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Log In</a></li>
             {{/if}}
           </ul>
             </div>
