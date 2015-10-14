@@ -1,23 +1,18 @@
 <template name="userDashboard">
 	<div class="container">
-    User dashboard will be populated here
-  </div>
+    <h1>User dashboard will be populated here</h1>
 
-  <div>
-    All user planned suprises 
-    <!-- {{#each userPlannedSurprises}}
-            <div class="branch" branchid={{_id}} retailerid={{retailerId}}>
-                <span class="fa fa-building"> </span>
-                <span> {{name}} </span>
-            </div>
-        {{/each}} -->
+    <div>
+      <h2>All user planned suprises</h2> 
+      <ul>
+      {{#each surprise}}
+        <li><a href="/campaign/{{_id}}">{{title}}</a></li>
+      {{/each}}
+    </ul>
 
-  <div class="testClick"> 
-    click
-  </div>
+    <input type="button" href="#startANewCampaign" data-toggle="modal"  value="Create New Surprise" />
 
-  <input type="button" href="#startANewCampaign" data-toggle="modal"  value="Create New Surprise" />
-
+    </div>
   </div>
 
 
