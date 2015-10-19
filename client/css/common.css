@@ -194,16 +194,17 @@ img {
 
 .jumbotron {
   background-image: url("../img/background.png");
-  top: -50px;
+  top: -100px;
 }
 
 img.jumbotron {
-  top: -50px;
+  top: -200px;
 }
 
 .jumbotron-button{
-  position: relative;
-
+	position: relative;
+	top:;
+	left:400px;
 }
 
 
