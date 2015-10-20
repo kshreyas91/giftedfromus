@@ -13,7 +13,7 @@ Meteor.startup(function() {
 
   Template.userDashboard.helpers({
      'surprise': function(){
-          return Surprises.find({}, {sort: {name: 1}});
+          return Surprises.find({createdBy:Meteor.userId()}, {sort: {name: 1}});
       }
   });
 
