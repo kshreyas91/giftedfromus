@@ -3,19 +3,20 @@
 
 
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-          <div class="top-header">
+              <!--
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-            </button>
-              <a class="navbar-brand" href="/">GiftedBy.Us </a>
+            </button>-->
+              <a class="navbar-brand" href="/home">GiftedBy.Us </a>
               <p class="navbar-text hidden-xs">Give smarter gifts.</p>
               
-            <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+<!--
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">-->
             {{#if currentUser}}
-            <li class="dropdown nav navbar-nav navbar-right">
+            <li class="nav navbar-nav navbar-right">
               <p class="navbar-text">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="profilepic" src="/img/users/profile1.png"> {{name}} <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -29,20 +30,22 @@
               </p>
             </li>
             {{else}}
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#signUp" data-toggle="modal">SIGN UP</a></li>
-              <li><a href="#logIn" data-toggle="modal">LOG IN</a></li>
-            </ul>
+            <div class="nav navbar-nav navbar-right">
+              
+              <a href="#signUp" data-toggle="modal">SIGN UP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#logIn" data-toggle="modal">LOG IN</a>
+<!--              <a href="#0" class="cd-signin" data-toggle="modal">Sign in</a>
+              <a href="#0" class="cd-signup" data-toggle="modal">Sign up</a>-->
+            </div>
             {{/if}}
             
-            </div>
-        </div>
+
+<!--        </div>-->
       </nav>
 
       <!-- SIGN UP LOG IN MODALS -->      
       {{> register}}
       {{> login}}
-          
 
 
 

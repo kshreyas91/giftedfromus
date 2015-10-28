@@ -8,35 +8,50 @@
             </div>
             <div class="modal-body">
               <div class="form-top">
-                            <div class="form-top-left">
-                              
-                          <p>Fill in the form below to instantly start a campaign:</p>
+                    <div class="form-top-left">
+                       <p>Fill in the form below to instantly start a campaign:</p>
                             </div>
-                            <div class="form-bottom">
-                          <form  class="registration-form">
+                        <div class="form-bottom">
+                          <form  class="registration-form form-horizontal form-label-left">
                             <div class="form-group">
-                              <label class="sr-only" for="form-campaign-title">Campaign Title</label>
-                                <input type="text" name="formCampaignTitle" placeholder="Gift Campaign Title" class="form-control" id="form-campaign-title">
+                              <label class="control-label col-md-4" for="form-campaign-title">Campaign Title</label>
+                              <div class="col-md-8 col-sm-8 col-xs-12">
+                                <input type="text" name="formCampaignTitle" placeholder="(e.g. John's Awesome Surprise Present!)" class="form-control" id="form-campaign-title">
                               </div>
-                              <div class="form-group">
-                                <label class="sr-only" for="form-giftee-name">Giftee Name</label>
-                                <input type="text" name="formGifteeName" placeholder="Giftee Name" class="form-control" id="form-giftee-name">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-4" for="form-giftee-name">Giftee Name</label>
+                              <div class="col-md-8 col-sm-8 col-xs-12">
+                                <input type="text" name="formGifteeName" placeholder="(e.g. John Smith)" class="form-control" id="form-giftee-name">
                               </div>
-                              <div class="form-group">
-                                <label class="sr-only" for="form-birthday">Birthday</label>
-                                <input type="text" name="formBirthday" placeholder="Giftee Birthday" class=" form-control" id="form-birthday">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-4" for="form-birthday">Gift Date</label>
+                              <div class="col-md-8 col-sm-8 col-xs-12">
+                                <input type="date" name="formBirthday" placeholder="Giftee Birthday" class="form-control" id="form-birthday">
                               </div>
-                              <div class="form-group">
-                                <label class="sr-only" for="form-campaign-date">Campaign End Date</label>
-                                <input type="text" name="formCampaignDate" placeholder="Campaign End Date" class="form-control" id="form-campaign-date">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-4" for="form-campaign-date">Campaign End Date</label>
+                              <div class="col-md-8 col-sm-8 col-xs-12">
+                                <input type="date" name="formCampaignDate" placeholder="Campaign End Date" class="form-control" id="form-campaign-date">
                               </div>
-                              <div class="form-group">
-                                <label class="sr-only" for="form-campaign-desc">Campaign Description</label>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-4" for="form-campaign-date">Campaign Pledge Goal</label>
+                              <div class="col-md-8 col-sm-8 col-xs-12">
+                                <input type="text" name="formPledgeGoal" placeholder="(e.g. $300)" class="form-control" id="form-pledge-goal">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-4" for="form-campaign-desc">Campaign Description</label>
+                              <div class="col-md-8 col-sm-8 col-xs-12">
                                 <textarea name="form-campaign-desc" placeholder="Campaign Description" class="form-campaign-desc form-control" id="formCampaignDesc"></textarea>
                               </div>
-                              <div class = "centered">
-                              <button type="submit">Start Campaign</button>
-                              </div>
+                            </div>
+                            <div class = "centered">
+                              <button type="submit" class="btn btn-success">Start Campaign</button>
+                            </div>
                           </form>
                         </div>
                         </div>

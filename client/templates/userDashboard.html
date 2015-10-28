@@ -1,21 +1,134 @@
 <template name="userDashboard">
-  {{> sidebar}}
+    {{#if currentUser}}
+      {{> sidebar}}
+    {{else}}
+    {{/if}}
 
 	<div class="main-content">
-    <h1>User dashboard will be populated here</h1>
+    <p class="dashboard-header">{{name}}'s Campaigns</p>
 
-    <div>
-      <h2>All user planned suprises</h2> 
-      <ul>
-      {{#each surprise}}
-        <li><a href="/campaign/{{_id}}">{{title}}</a></li>
-      {{/each}}
-    </ul>
-
-    <input type="button" href="#startANewCampaign" data-toggle="modal"  value="Create New Surprise" />
-
+    <div class="col-md-12">
+      <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
+           <span class="dashboard-stats-header">Total Campaigns</span>
+           <p class = "dashboard-stats-count">25</p>         
+      </div>
+      <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
+          <span class="dashboard-stats-header">Active Campaigns</span>
+          <p class = "dashboard-stats-count">25</p>
+      </div>
+      <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
+          <span class="dashboard-stats-header">Ended Campaigns</span>
+          <p class = "dashboard-stats-count">25</p>
+      </div>
+      <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
+          <span class="dashboard-stats-header">% Fully Funded</span>
+          <p class = "dashboard-stats-count">25</p>
+      </div>
     </div>
-  </div>
+
+    <div class = "col-md-12">
+      <div class="dashboard-section">
+        <div class="dashboard-section-header">
+          Active Campaigns
+        </div>
+        <table class = "table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Campaign Name</th>
+              <th>Pledge Goal</th>
+              <th>End Date</th>
+              <th>Pledged / Invited</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each surprise}}
+            <tr>
+              <td>1</td>
+              <td> 
+                <a href="/campaign/{{_id}}">{{title}}</a>
+              </td>
+              <td>$2000</td>
+              <td>{{endDate}}</td>
+              <td>20/50</td>
+              <td>
+                <a href="#" title="Email Invitees"><i class="fa fa-envelope"></i></a>&nbsp;
+                <a href="#" title="Delete Active Campaign"><i class="fa fa-trash-o"></i></a> 
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        <button class="btn btn-success btn-large" style="float:right" href="#startANewCampaign" data-toggle="modal">Create New Campaign</button>
+      </div>
+    </div>
+
+
+<!-- 
+    GRAPHS
+    1) Per campaign: Number of invitees over time
+    2) Per campaign: Amount pledged over time
+
+    (on track to reach goal?)
+-->
+
+    <div class="col-md-12">
+      <div class="dashboard-section">
+        <div class="dashboard-section-header">
+          Campaign: In Review
+        </div>
+
+        <div class="demo-container" style="height:280px">
+                                            <div id="placeholder33x" class="demo-placeholder" style="padding: 0px; position: relative;"><canvas class="flot-base" width="547" height="280" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 547px; height: 280px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 68px; top: 264px; left: 75px; text-align: center;">29/10/15</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 68px; top: 264px; left: 149px; text-align: center;">01/11/15</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 68px; top: 264px; left: 223px; text-align: center;">04/11/15</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 68px; top: 264px; left: 297px; text-align: center;">07/11/15</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 68px; top: 264px; left: 371px; text-align: center;">10/11/15</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 68px; top: 264px; left: 445px; text-align: center;">13/11/15</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 246px; left: 13px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 205px; left: 6px; text-align: right;">20</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 164px; left: 6px; text-align: right;">40</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 123px; left: 6px; text-align: right;">60</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 82px; left: 6px; text-align: right;">80</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 41px; left: 0px; text-align: right;">100</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 0px; text-align: right;">120</div></div></div><canvas class="flot-overlay" width="547" height="280" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 547px; height: 280px;"></canvas><div class="legend"><div style="position: absolute; width: 75px; height: 16px; top: 17px; right: 24px; opacity: 0.85; background-color: rgb(255, 255, 255);"> </div><table style="position:absolute;top:17px;right:24px;;font-size:smaller;color:#3f3f3f"><tbody><tr><td class="legendColorBox"><div style="border:1px solid null;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(150,202,89);overflow:hidden"></div></div></td><td class="legendLabel">Email Sent&nbsp;&nbsp;</td></tr></tbody></table></div></div>
+                                        </div>
+        
+      </div>
+    </div>
+
+  
+
+
+    <div class="col-md-12">
+      <div class="dashboard-section">
+        <div class="dashboard-section-header">
+          Ended Campaigns
+        </div>
+        <table class = "table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Ended Campaign Name</th>
+              <th>Giftee Name</th>
+              <th>End Date</th>
+              <th>Gift Selected</th>
+              <th>Ask for feedback</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each surprise}}
+            <tr>
+              <td>1</td>
+              <td>Ended Campaign Name</td>
+              <td>Giftee Name</td>
+              <td>Date Ended</td>
+              <td>Selected Gift</td>
+              <td>
+                <a href="mailto:Recipient@Email.com?subject=Did You Like Your Gift?&body=Hi! We recently sent you a gift through Gifted By Us! Did you like our gift? Feel free to let us know if you thought we should have gotten you another gift! Love, Us" title="Ask for Feedback"><i class="fa fa-reply"></i></a> 
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+
+
+
+</div>
+
 
 
 </template>

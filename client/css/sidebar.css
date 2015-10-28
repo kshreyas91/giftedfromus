@@ -2,7 +2,13 @@
 
 .main-content {
 	font-family: Arial, Helvetica, sans-serif;
-	padding: 15px 0px 0px 210px;
+	padding: 15px 0px 0px 230px;
+	background-color: #eee;
+	min-height: 1000px;
+}
+
+.main-content-no-sidebar{
+	padding: 15px 20px;
 }
 
 
@@ -14,7 +20,7 @@
 	top: 53px;
 	left: 0;
 	background-color: #292c2f;
-	width: 180px;
+	width: 200px;
 	height: 100%;
 	padding: 20px 0;
 }
@@ -55,7 +61,7 @@
 }
 
 .sidebar-links div.selected > a{
-	background-color: #ffffff;
+	background-color: #eee;
 	color: #565d63;
 	line-height: 2.3;
 	margin: 0;
@@ -83,8 +89,8 @@
 }
 
 .sidebar-links div.selected ul.sub-links {
-	max-height: 150px;
-	padding: 12px 0 12px 30px;
+	max-height: 220px;
+	padding-bottom: 6px;
 }
 
 .sidebar-links div .sub-links a {
@@ -92,6 +98,7 @@
 	color: #b3bcc5;
 	display: block;
 	text-align: left;
+	padding: 2px 0;
 }
 
 /* Link Colors */
@@ -134,14 +141,13 @@
 
 	.main-content{
 		max-width: none;
-		padding: 40px 30px 30px 30px;
+		padding: 40px 20px 10px 20px;
 	}
 
 	.sidebar-left-collapse {
 		width: auto;
 		height: auto;
 		position: static;
-		padding: 55px 0 0;
 	}
 
 	.sidebar-left-collapse .sidebar-links {
@@ -173,12 +179,14 @@
 	}
 
 	.sidebar-links div.selected .sub-links {
+		background-color: #fff;
 		display: block;
 		position: absolute;
 		text-align: center;
 		width: auto;
 		left: 0;
 		right: 0;
+		padding: 12px 0 12px 30px;
 	}
 
 	.sidebar-links div.selected .sub-links li {
@@ -190,6 +198,7 @@
 		margin-right: 20px;
 		font-size: 13px;
 		color: #748290;
+		padding: 0;
 	}
 
 }
@@ -199,28 +208,29 @@
 @media (max-width: 450px) {
 
 	.main-content{
-		padding: 90px 55px;
+		padding: 40px 20px 0px 20px;
 	}
 
 	.sidebar-left-collapse {
-		padding: 55px 0;
+		height: 215px;
 	}
 
 	.sidebar-left-collapse .sidebar-links {
 		text-align: center;
-		margin: 55px auto 0;
 		position: relative;
+		margin: 0px;
 	}
 
 	.sidebar-links div {
 		display: block;
 		width: 240px;
 		margin: 0 auto 5px;
+		margin-top: 1px;
 	}
 
 	.sidebar-links div > a {
 		text-align: left;
-		padding: 10px 25px;
+		padding: 9px 25px;
 		vertical-align: middle;
 		border-top: none;
 		border-left-width: 2px;
@@ -235,7 +245,8 @@
 	}
 
 	.sidebar-links div.selected .sub-links {
-		bottom: -90px;
+		bottom: -70px;
+		padding: 12px 10px;
 	}
 
 }
@@ -274,10 +285,19 @@ img.sidebar-profilepic {
   color: #BAB8B8;
 }
 
-h4.sidebar-title{
-	font-color: #fff;
+.sidebar-title{
+	color: #fff;
 	margin-top: 0px;
 }
+
+
+.left-col {
+	background-color: #E8E8E8;
+	float:left;
+	display: table-cell;
+	min-height: 100%;
+}
+
 
 /*	Removing margins and paddings from the body, so that
     the sidebar takes the full height of the page */

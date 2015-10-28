@@ -6,7 +6,6 @@ img.profilepic {
   border-radius: 50%
 }
 
-
 img {
 	max-width:100%
 }
@@ -40,184 +39,45 @@ img {
 }
 
 .row {
-	margin-left: 30px;
-	margin-right: 30px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
-/* NAVBAR CSS */
-
-.navbar {
-	border-radius: 0px;
-	top:0;
-	left:0;
-	position:fixed;
-	z-index:9999;
-	height:55px;
-	width: 100%;
-	background-image: url("../img/background.png");  
-	border: 0px;
-    height: 53px;
-    vertical-align: middle;
-}
-
-.navbar .navbar-right{
-	margin-right: 15px;
-}
-
-.navbar-default .navbar-nav > li > a {
-	color: #1F6646;
-	font-weight: bold;
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-	color: #fff;
-	font-weight: bold;
-}
-
-.navbar-default .navbar-nav > .open > a, a:focus {
-	background-color: transparent;
-}	
-
-
-
-.navbar-default .navbar-brand {
-	font-weight: bold;
-	color: #F7F1F3;
+.main-header {
+	font-family: 'Sansita One', 'Arial';
+	font-weight: 800;
+	color: #222;
 	text-align: center;
-}
-
-.dropdown-menu:after{
-	content: "";
-}
-
-
-/* CAMPAIGN PAGE CSS */
-
-.campaign-header {
-    margin: 40px 0px 40px 0px;
-    text-align: center;
-}
-
-.campaign-header h1 {
-    /*font-family: "Arial Black", "sans-serif";*/
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 48px;
-    letter-spacing: 1px;
-}
-
-.list-group-item {
-	padding: 3px 3px;	
-}
-
-.bordered-box {
-	border-style: solid;
-	border-width: 12px;
-	border-color: #D8D8D8;
-	border-radius: 6px;
-	padding: 20px;
-
-}
-
-.invite-box{
-	padding-top:10px;
-	background-color: #D8D8D8;
-	border-radius: 6px;
-	padding-right: 15px;
-	padding-left: 15px;
-	padding-bottom: 15px;
-}
-
-.pledge{
-	font-weight: bold;
-	line-height: 40px;
-}
-
-.progress-bar{
-	background-color: #8D6B94;
-}
-
-.list-group-item{
-	background-color: transparent;
-	border: 0px;
-}
-
-.list-group {
-	margin-bottom:0px;
-}
-
-.inner-bg {
-    padding: 120px 0 170px 0;
-}
-
-.create-row {
-	margin-top: 100px;
-}
-
-.centered {
-    text-align:center;
-}
-
-.text-right {
-  float:right;
-}
-
-@media (min-width: 1000px) {
-  .top-header {
-		width: 70%;
-		margin: 0 auto;
-		vertical-align: middle;
-	}
-}
-
-/* MAIN PAGE CSS */
-
-.main-subheader {
-	margin-top:10px;
-	color: #336666;
-	font-weight: bold;
-	margin-bottom: 0px;
-}
-
-.main-subdesc {
-	font-family: 'Helvetica';
-	line-height: 1.5em;
-}
-
-.fa-circle {
-	color: #66CC99;
-}
-
-.fa-subicon {
-	color: #fff;
-}
-
-.jumbotron {
-  background-image: url("../img/background.png");
-  top: -100px;
-}
-
-img.jumbotron {
-  top: -200px;
-}
-
-.jumbotron-button{
-	position: relative;
-	top:;
-	left:400px;
-}
-
-
-/* SIDEBAR CSS */
-
-.left-col {
-	background-color: #E8E8E8;
-	float:left;
-	display: table-cell;
-	min-height: 100%;
+	font-size: 36px;
 }
 
 .modal-dialog {
 	position: center;
 	margin-top: 15%;
+}
+
+.create-row{
+	margin-top: 60px;
+}
+
+.create-header{
+	margin-top: 80px;
+}
+
+.form-box{
+	padding: 30px;
+	background: rgba(255, 255, 255, 0.75);
+	border-radius:6px;
+}
+
+.btn-create {
+  color: #fff;
+  background-color: #8D6B94;
+  border-color: #33032F;
+}
+
+/** FORM ELEMENTS **/
+
+.control-label{
+	float:left;
 }

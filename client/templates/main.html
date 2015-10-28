@@ -1,22 +1,26 @@
 <template name="main">
 
     <div class="jumbotron" id="loginModal">
-        <p style="text-align:center"><img class="jumbotron" src = "../img/2.gif"></p>
+        <img class="jumbotron" src = "../img/2.gif">
         <div class = "jumbotron-button">
-            <input type="button" href="#signUp" data-toggle="modal"  value="Get Started!" />
+            {{#if currentUser}}
+                <button class="btn btn-warning btn-xlarge" type="button" href="#startANewCampaign" data-toggle="modal">Get Started!</button>
+            {{else}}
+                <button class="btn btn-warning btn-xlarge" type="button" href="#signUp" data-toggle="modal">Get Started!</button>
+            {{/if}}
         </div>
     </div>
 
     <div class="container">
         <div class="row">
-            <h1> Choosing the perfect gift has never been so easy!</h1>
+            <p class="main-header"> Choosing the perfect gift has never been so easy!</p>
             <div class="col-md-4">
                 <div class="bottom-aligner">
                     <span class="fa-stack fa-lg">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-subicon fa-list-alt fa-stack-1x"></i>
                     </span>
-                    <h3 class="main-subheader">Create a Campaign</h3>
+                    <p class="main-subheader">Create a Campaign</p>
                 </div>
                 <p class="main-subdesc">Create a campaign to find the perfect gift for your loved ones. Share your new campaign with friends and family!</p>
             </div>
@@ -26,7 +30,7 @@
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-subicon fa-users fa-stack-1x"></i>
                     </span>
-                    <h3 class="main-subheader">Add & Vote for Gift Ideas</h3>
+                    <p class="main-subheader">Add & Vote for Gift Ideas</p>
                 </div>
                 <p class="main-subdesc">Add the perfect gift ideas that they will love. Vote as a group for the top gifts in the list!</p>
             </div>
@@ -36,7 +40,7 @@
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-subicon fa-gift fa-stack-1x"></i>
                     </span>
-                    <h3 class="main-subheader">Find the Gift for Your Budget</h3></div>
+                    <p class="main-subheader">Find the Gift for Your Budget</p></div>
                 <p class="main-subdesc">Pledge money to the campaign. Find the best gift ideas that fall into your group's budget!</p>
             </div>
         </div>

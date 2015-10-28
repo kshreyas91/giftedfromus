@@ -1,6 +1,7 @@
 <template name = "sidebar">
 <aside class="sidebar-left-collapse">
 
+
 		<!--{{#if currentUser}}-->
 		<div class="profile">
 			<div class="profile_pic">
@@ -16,15 +17,15 @@
 
 			<div class="link-blue selected">
 
-				<a href="#">
+				<a href="/home">
 					<i class="fa fa-subicon fa-list-alt"></i>My Campaigns
 				</a>
 
 				<ul class="sub-links">
-					<li><a href="#">Campaign A</a></li>
-					<li><a href="#">Campaign B</a></li>
-					<li><a href="#">Campaign C</a></li>
-					<li><a href="#startANewCampaign" data-toggle="modal"><i class="fa fa-plus"></i> Start a New Campaign</a></li>
+					{{#each surprise}}
+        				<li><a href="/campaign/{{_id}}">{{title}}</a></li>
+      				{{/each}}
+					<!--<li><a href="#startANewCampaign" data-toggle="modal"><i class="fa fa-plus"></i> Start a New Campaign</a></li>-->
 				</ul>
 
 			</div>
@@ -68,6 +69,5 @@
 <!--
 		{{else}}
 		{{/if}}} -->
-
 	</aside>
 </template>
