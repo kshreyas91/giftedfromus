@@ -39,17 +39,15 @@
         <div class = "row">
           <div class="col-md-8">
             {{#each suggestions}}
-            <div class="panel panel-default">
-              <div class="panel-heading">
-              <h3 class="panel-title">{{name}} ({{price}})</h3>
-
-            </div>
-            <div class="panel-body">
-              {{description}}
-            </div>
-            <div>
-              {{upvotes}} Number of people Endorsed it.  <button class="endroseGift" id={{_id}}> Endorse </button>
-            </div>
+            <div class="media">
+              <div class="media-left">
+              <button class="endroseGift btn btn-default" id={{_id}}>  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <h5>{{upvotes}}</h5> </button>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">{{name}}
+                <br><small>${{price}}</small></h4>
+                <p>{{description}}</p>
+              </div>
             </div>
             {{/each}}
           </div>
