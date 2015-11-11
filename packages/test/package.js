@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'giftedfromus:test',
+  name: 'giftedbyus:test',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -20,6 +20,5 @@ Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
   api.use(['mike:mocha-package@0.5.7', 'practicalmeteor:chai@2.1.0_1']);
-  api.use('giftedfromus:test');
-  api.addFiles('test-tests.js');
+  api.use('giftedbyus:test');
 });

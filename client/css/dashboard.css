@@ -1,0 +1,81 @@
+
+/** DASHBOARD CSS **/
+
+
+.dashboard-header {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	font-weight:bold;
+	margin-top: 15px;
+}
+
+.dashboard-stats-section{
+	border-left: 2px solid #ADB2B5;
+	padding: 3px;
+	height: 100%;
+	margin-bottom: 15px;
+	background-color: #f8f8f8;
+	text-align: center;
+}
+
+.dashboard-stats-header, th{
+	font-size: 10px;
+	text-transform: uppercase;
+	font-weight:bold;
+	padding-bottom: 0px;
+	text-align: center;
+	color: #336666;
+}
+
+.dashboard-stats-count{
+	font-size: 24px;
+	font-weight:bold;
+	text-align: center;
+}
+
+.dashboard-section {
+	background-color: #fff;
+	position:relative;
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 10px 17px 10px 10px;
+	display:inline-block;
+	border: 1px solid #E6E9ED;
+	-webkit-column-break-inside: avoid;
+	  -moz-column-break-inside: avoid;
+	opacity: 1;
+	  -moz-transition: all .2s ease;
+	  -o-transition: all .2s ease;
+	  -webkit-transition: all .2s ease;
+	  -ms-transition: all .2s ease;
+	transition: all .2s ease;
+}
+
+.dashboard-section-header {
+	border-bottom: 2px solid #E6E9ED;
+	padding: 1px 5px 6px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+table{
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 10px;
+}
+
+th {
+	border-bottom: 2px solid #eee;
+	padding-right: 10px;
+	margin-bottom: 2px;
+}
+
+td{
+	padding-right: 10px;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 3px;
+	text-align: center;
+	font-size: 12px;
+}

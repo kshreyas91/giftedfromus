@@ -21,4 +21,9 @@ random
 ejson
 spacebars
 check
+<<<<<<< HEAD
 giftedfromus:test
+=======
+peppelg:bootstrap-3-modal
+# twbs:bootstrap
+>>>>>>> newpage

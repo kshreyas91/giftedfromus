@@ -1,21 +1,19 @@
-<template name="campaignPage">
-<<<<<<< HEAD
-
-<div class="container">
+<template name = "campaignContent">
 	{{#with data}}
         <div class = "row">
           <div class="campaign-header">
             <h1>{{title}}</h1>
-            <p class="lead"><strong>Birthday:</strong> {{date}}  |   <strong>Campaign Ends:</strong> {{endDate}} </p>
+            <p class="lead"><strong>Gift Date:</strong> {{date}} &nbsp;&nbsp;|&nbsp;&nbsp;<strong>Campaign Ends:</strong> {{endDate}} </p>
 
             </div>
           </div>
-            <div class="row">
-              <div class="col-md-8">
+            
+            <div class="row top-row">
+              <div class="top-row-image col-md-8">
                 <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded" >
               </div>
-              <div class="bordered-box col-md-4">
-               <h2><small>Let's Celebrate {{name}}</small></h2>
+              <div class="top-row-sidebox bordered-box col-md-4">
+               <div class="campaign-subheader">Let's celebrate {{name}}!</div>
 
                <p>{{description}}</p>
 
@@ -30,7 +28,7 @@
 
                <div class = "centered">
               <p><a class="btn btn-lg btn-success" role="button" data-toggle="modal" data-target="#pledgeMoney">Pledge Today!</a></p>
-              <p><a class="btn btn-default" role="button" data-toggle="modal" data-target="#suggestGift">Suggest Gift</a></p>
+              <p><a class="btn bth-lg btn-default" role="button" data-toggle="modal" data-target="#suggestGift">Suggest New Gift</a></p>
             </div>
             </div>
           </div>
@@ -39,22 +37,27 @@
         
         <div class = "row">
           <div class="col-md-8">
+            <div class="campaign-subheader">Gift List</div>
             {{#each suggestions}}
-            <div class="media">
-              <div class="media-left">
-              <button class="endroseGift btn btn-default" id={{_id}}>  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <h5>{{upvotes}}</h5> </button>
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">{{name}}
-                <br><small>${{price}}</small></h4>
-                <p>{{description}}</p>
-              </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+              <h3 class="panel-title">{{name}} ({{price}})</h3>
+
+            </div>
+            <div class="panel-body">
+              {{description}}
+            </div>
+            
+            <div>
+              {{upvotes}} Number of people Endorsed it.  
+              <button class="endorseGift" id="{{_id}}"> Endorse </button>
+            </div>
             </div>
             {{/each}}
           </div>
-          <div class="col-md-4">
-            <div class="row invite-box">
-              <h4>Public Link</h4>
+          
+          <div class="col-md-4 invite-box">
+              <div class = "campaign-subheader">Public Link</div>
               <form class="form-inline">
                 <div class="form-group">
                   <input type="text" class="form-control" id="publiclink" value="{{publicURL}}">
@@ -64,8 +67,8 @@
             </div>
 
             <br>
-            <div class="row invite-box">
-              <h4>Invite List (5)</h4>
+            <div class="col-md-4 invite-box">
+              <div class="campaign-subheader">Previous Pledges</div>
                 <ul class="list-group">
                   <li class="list-group-item"><img class="profilepic" src="/img/users/profile1.png">Peter Prosciutto</li>
                   <li class="list-group-item"><img class="profilepic" src="/img/users/profile2.png">Sal Sausage</li>
@@ -74,14 +77,12 @@
                   <li class="list-group-item"><img class="profilepic" src="/img/users/profile5.png">Kim Kielbasa</li>
                 </ul>
             </div>
-          </div>
         </div>
 
         <!-- PLEDGE MONEY - Frank -->
         <div class="modal fade" id="pledgeMoney" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-
 
                 {{#if currentUser}}
                 <div class="modal-header">
@@ -101,12 +102,12 @@
               </div>
                 {{/if}}
 
-
                 
               
            </div>
           </div>
         </div>
+
         <!-- SUGGEST NEW GIFT - Frank -->
         <div class="modal fade" id="suggestGift" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
@@ -135,17 +136,6 @@
 
 
 {{/with}}
-=======
-    {{#if currentUser}}
-      {{> sidebar}}
-      <div class = "main-content">
-        {{> campaignContent}}
->>>>>>> newpage
-      </div>
-    {{else}}
-      <div class = "main-content-no-sidebar">
-        {{> campaignContent}}
-      </div>
-    {{/if}}
-  
-  </template>
+
+
+</template>

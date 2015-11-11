@@ -3,88 +3,50 @@
 
 
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-          <div class="top-header">
+              <!--
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-            </button>
-              <a class="navbar-brand" href="/">GiftedBy.Us </a>
+            </button>-->
+              <a class="navbar-brand" href="/home">GiftedBy.Us </a>
               <p class="navbar-text hidden-xs">Give smarter gifts.</p>
               
-            <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+<!--
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">-->
             {{#if currentUser}}
-            <li class="dropdown nav navbar-nav navbar-right">
-              <p class="navbar-text">
+            <li class="nav navbar-nav navbar-right">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="profilepic" src="/img/users/profile1.png"> {{name}} <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="/home">MY CAMPAIGNS</a></li>
-                  <li><a href="#">SETTINGS</a></li>
-                  <li role="separator" class="divider"></li>
                   <li><a href="#startANewCampaign" data-toggle="modal">START NEW CAMPAIGN</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">SETTINGS</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a class ="logout" href="#">LOG OUT</a></li>
                 </ul>
-              </p>
             </li>
             {{else}}
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#signUp" data-toggle="modal">SIGN UP</a></li>
-              <li><a href="#logIn" data-toggle="modal">LOG IN</a></li>
-            </ul>
+            <div class="nav navbar-nav navbar-right">
+              
+              <a href="#loginsignup" data-toggle="modal" class="nav-links signup-link">SIGN UP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#loginsignup" data-toggle="modal" class="nav-links login-link">LOG IN</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
             {{/if}}
             
-            </div>
-        </div>
+
+<!--        </div>-->
       </nav>
 
-      <!-- SIGN UP LOG IN MODALS -->
-      <div class="modal fade" id="signUp" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content row-fluid">
-          <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
-          </div>
-          <div class="modal-body">
-              {{> register}}
-          </div>
-        </div>
-        </div>
-      </div> 
-
-      <div class="modal fade" id="logIn" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content row-fluid">
-          <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel">Log In</h4>
-          </div>
-          <div class="modal-body">
-              {{> login}}
-          </div>
-        </div>
-        </div>
-      </div> 
+      <!-- SIGN UP LOG IN MODALS -->      
+      {{> loginsignup}}
 
 
 
       <!-- POP UP CREATE CAMPAIGN - Frank -->
-      <div class="modal fade" id="startANewCampaign" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Start a New Campaign</h4>
-            </div>
-            <div class="modal-body">
-              <div class="form-top">
-                {{> createNewSurprise}}
-              </div>
-            </div>
-         </div>
-        </div>
-      </div>
-
+      {{> createNewSurprise}}
+             
 
 
 </template>
