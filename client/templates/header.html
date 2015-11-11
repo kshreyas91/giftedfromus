@@ -17,7 +17,6 @@
             <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">-->
             {{#if currentUser}}
             <li class="nav navbar-nav navbar-right">
-              <p class="navbar-text">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="profilepic" src="/img/users/profile1.png"> {{name}} <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="/home">MY CAMPAIGNS</a></li>
@@ -27,15 +26,12 @@
                   <li role="separator" class="divider"></li>
                   <li><a class ="logout" href="#">LOG OUT</a></li>
                 </ul>
-              </p>
             </li>
             {{else}}
             <div class="nav navbar-nav navbar-right">
               
-              <a href="#signUp" data-toggle="modal">SIGN UP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="#logIn" data-toggle="modal">LOG IN</a>
-<!--              <a href="#0" class="cd-signin" data-toggle="modal">Sign in</a>
-              <a href="#0" class="cd-signup" data-toggle="modal">Sign up</a>-->
+              <a href="#loginsignup" data-toggle="modal" class="nav-links signup-link">SIGN UP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#loginsignup" data-toggle="modal" class="nav-links login-link">LOG IN</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
             {{/if}}
             
@@ -44,8 +40,7 @@
       </nav>
 
       <!-- SIGN UP LOG IN MODALS -->      
-      {{> register}}
-      {{> login}}
+      {{> loginsignup}}
 
 
 

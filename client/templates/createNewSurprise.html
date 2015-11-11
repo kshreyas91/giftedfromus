@@ -12,45 +12,48 @@
                        <p>Fill in the form below to instantly start a campaign:</p>
                             </div>
                         <div class="form-bottom">
-                          <form  class="registration-form form-horizontal form-label-left">
+                          <form class="registration-form form-horizontal form-label-left">
                             <div class="form-group">
-                              <label class="control-label col-md-4" for="form-campaign-title">Campaign Title</label>
+                              <label class="control-label col-md-4 col-sm-4" for="form-campaign-title">Campaign Title</label>
                               <div class="col-md-8 col-sm-8 col-xs-12">
                                 <input type="text" name="formCampaignTitle" placeholder="(e.g. John's Awesome Surprise Present!)" class="form-control" id="form-campaign-title">
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="control-label col-md-4" for="form-giftee-name">Giftee Name</label>
+                              <label class="control-label col-md-4 col-sm-4" for="form-giftee-name">Giftee Name</label>
                               <div class="col-md-8 col-sm-8 col-xs-12">
                                 <input type="text" name="formGifteeName" placeholder="(e.g. John Smith)" class="form-control" id="form-giftee-name">
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="control-label col-md-4" for="form-birthday">Gift Date</label>
+                              <label class="control-label col-md-4 col-sm-4" for="form-birthday">Gift Date</label>
                               <div class="col-md-8 col-sm-8 col-xs-12">
                                 <input type="date" name="formBirthday" placeholder="Giftee Birthday" class="form-control" id="form-birthday">
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="control-label col-md-4" for="form-campaign-date">Campaign End Date</label>
+                              <label class="control-label col-md-4 col-sm-4" for="form-campaign-date">Campaign End Date</label>
                               <div class="col-md-8 col-sm-8 col-xs-12">
                                 <input type="date" name="formCampaignDate" placeholder="Campaign End Date" class="form-control" id="form-campaign-date">
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="control-label col-md-4" for="form-campaign-date">Campaign Pledge Goal</label>
+                              <label class="control-label col-md-4 col-sm-4" for="form-campaign-date">Campaign Pledge Goal</label>
                               <div class="col-md-8 col-sm-8 col-xs-12">
-                                <input type="text" name="formPledgeGoal" placeholder="(e.g. $300)" class="form-control" id="form-pledge-goal">
+                                <div class="input-group">
+                                  <span class="input-group-addon">$</span>
+                                  <input type="number" name="formPledgeGoal" value="300" min="0" step="25" data-number-to-fixed="2" data-number-stepfactor="100" id="pledgeAmount" class="form-control currency">
+                                </div>
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="control-label col-md-4" for="form-campaign-desc">Campaign Description</label>
+                              <label class="control-label col-md-4 col-sm-4" for="form-campaign-desc">Campaign Description</label>
                               <div class="col-md-8 col-sm-8 col-xs-12">
                                 <textarea name="form-campaign-desc" placeholder="Campaign Description" class="form-campaign-desc form-control" id="formCampaignDesc"></textarea>
                               </div>
                             </div>
                             <div class = "centered">
-                              <button type="submit" class="btn btn-success">Start Campaign</button>
+                              <button type="submit" class="btn btn-success full-width">Start Campaign</button>
                             </div>
                           </form>
                         </div>

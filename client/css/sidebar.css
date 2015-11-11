@@ -2,13 +2,13 @@
 
 .main-content {
 	font-family: Arial, Helvetica, sans-serif;
-	padding: 15px 0px 0px 230px;
-	background-color: #eee;
+	padding: 15px 40px 0px 230px;
+	background-color: #e8e8e8;
 	min-height: 1000px;
 }
 
 .main-content-no-sidebar{
-	padding: 15px 20px;
+	padding: 15px 40px;
 }
 
 
@@ -61,7 +61,7 @@
 }
 
 .sidebar-links div.selected > a{
-	background-color: #eee;
+	background-color: #e8e8e8;
 	color: #565d63;
 	line-height: 2.3;
 	margin: 0;

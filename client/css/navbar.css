@@ -20,7 +20,7 @@
 	margin-top: 15px;
 	margin-right: 15px;
 	text-align: right;
-
+	vertical-align: middle;
 }
 
 .navbar-right > a {
@@ -62,7 +62,6 @@
 a.dropdown-toggle {
 	font-family: Arial;
 	font-size: 14px;
-	color: #000;
 }
 
 @media (max-width: 767px){
@@ -80,11 +79,6 @@ a.dropdown-toggle {
 	}
 }
 
-@media (min-width: 1000px){
-	.navbar-right .dropdown-menu{
-		right: 15%;
-	}
-}
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a {
     color:#ffffff;
@@ -92,4 +86,9 @@ a.dropdown-toggle {
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{
 	color:#000;
+}
+
+.nav-links{
+	margin-top: 15px;
+	padding-top: 15px;
 }

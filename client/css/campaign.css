@@ -1,5 +1,19 @@
 /* CAMPAIGN PAGE CSS */
 
+.top-row {
+	min-height: 50px;
+	height:auto;
+	display: table;
+}
+
+.top-row-image{
+	display: table-cell;
+}
+
+.top-row-sidebox{
+	display: table-cell;
+}
+
 .campaign-header {
     margin: 40px 0px 40px 0px;
     text-align: center;
@@ -33,6 +47,7 @@
 	border-radius: 6px;
 	padding: 20px;
 	height: 100% auto;
+	background-color: #fff;
 
 }
 
@@ -85,4 +100,8 @@
   .main-subdesc {
 		text-align: center;
 	}
+}
+
+.gift-panel{
+	
 }
