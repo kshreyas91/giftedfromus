@@ -1,36 +1,4 @@
 <template name="userDashboard">
-<<<<<<< HEAD
-
-
-    <div class="jumbotron" id="loginModal">
-        <p style="text-align:center"><img src = "../img/2.gif"></p>
-    </div>
-
-    <div class="container">
-      <!--<h4>Create a campaign to find the perfect gift for your loved ones. Share your new campaign with friends and family!</h4>
-     <input type="button" class="btn btn-lg btn-success" href="#startANewCampaign" data-toggle="modal"  value="Create New Surprise" />
-     <br>
-     <br>-->
-      <h2>Open Campaigns <span class="badge">2</span></h2>
-      <div class="row">
-        {{#each surprise}}
-          <div class="col-md-4">
-            <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded" >
-            <h3>{{title}}
-              <br><small>$500 raised</small></h3>
-            <p>{{description}}</p>
-            <p><a class="btn btn-default" href="/campaign/{{_id}}" role="button">View Campaign</a></p>
-          </div>
-        {{/each}}
-      </div>
-      <br>
-      <br>
-      <h2>Closed Campaigns <span class="badge">4</span></h2>
-      <br>
-      <br>
-      
-    </div>
-=======
     {{#if currentUser}}
       {{> sidebar}}
     {{else}}
@@ -63,6 +31,19 @@
         <div class="dashboard-section-header">
           Active Campaigns
         </div>
+
+          <div class="row">
+              {{#each surprise}}
+                <div class="col-md-4">
+                  <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded" >
+                  <h3>{{title}}
+                    <br><small>$500 raised</small></h3>
+                  <p>{{description}}</p>
+                  <p><a class="btn btn-default" href="/campaign/{{_id}}" role="button">View Campaign</a></p>
+                </div>
+              {{/each}}
+            </div>    
+        <!--
         <table class = "table-hover">
           <thead>
             <tr>
@@ -92,6 +73,9 @@
             {{/each}}
           </tbody>
         </table>
+
+      -->
+
         <button class="btn btn-success btn-large" style="float:right" href="#startANewCampaign" data-toggle="modal">Create New Campaign</button>
       </div>
     </div>
