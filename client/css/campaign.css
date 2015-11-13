@@ -1,18 +1,5 @@
 /* CAMPAIGN PAGE CSS */
 
-.top-row {
-	min-height: 50px;
-	height:auto;
-	display: table;
-}
-
-.top-row-image{
-	display: table-cell;
-}
-
-.top-row-sidebox{
-	display: table-cell;
-}
 
 .campaign-header {
     margin: 40px 0px 40px 0px;
@@ -46,9 +33,7 @@
 	border-color: #D8D8D8;
 	border-radius: 6px;
 	padding: 20px;
-	height: 100% auto;
 	background-color: #fff;
-
 }
 
 .invite-box{
@@ -102,6 +87,13 @@
 	}
 }
 
-.gift-panel{
-	
+.gift-tile{
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 2px solid #d8d8d8;
+	background-color: #fff;
+}
+
+.media-heading{
+	font-weight: bold;
 }

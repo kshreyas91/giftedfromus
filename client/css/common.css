@@ -76,3 +76,8 @@ img {
 .control-label{
 	float:left;
 }
+
+.center-btn{
+	width: 110px;
+	margin: 0 auto;
+}

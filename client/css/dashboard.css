@@ -79,3 +79,21 @@ td{
 	text-align: center;
 	font-size: 12px;
 }
+
+.campaign-tile{
+	position:relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height:350px;
+	border-bottom: 2px solid #f8f8f8;
+}
+
+.campaign-dashboard-title{
+	margin-top: 10px;
+	padding-top: 10px;
+	font-family: 'Helvetica';
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 50px;
+}
+

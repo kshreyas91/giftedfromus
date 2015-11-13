@@ -8,17 +8,17 @@
             </div>
           </div>
             
-            <div class="row top-row">
-              <div class="top-row-image col-md-8">
+            <div class="row">
+              <div class="col-md-8">
                 <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded" >
               </div>
-              <div class="top-row-sidebox bordered-box col-md-4">
+              <div class="bordered-box col-md-4">
                <div class="campaign-subheader">Let's celebrate {{name}}!</div>
 
                <p>{{description}}</p>
 
-               <h3 class = "pledge">$99.42  <small>pledged</small></h3>
-               <div class="row">
+               <h3 class = "pledge">$99.42<small>pledged</small></h3>
+               <div class= "row">
               </div>
                <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
@@ -26,9 +26,9 @@
                 </div>
                </div>
 
-               <div class = "centered">
+               <div class="centered">
               <p><a class="btn btn-lg btn-success" role="button" data-toggle="modal" data-target="#pledgeMoney">Pledge Today!</a></p>
-              <p><a class="btn bth-lg btn-default" role="button" data-toggle="modal" data-target="#suggestGift">Suggest New Gift</a></p>
+              <p><a class="btn btn-lg btn-primary" role="button" data-toggle="modal" data-target="#suggestGift">Suggest New Gift</a></p>
             </div>
             </div>
           </div>
@@ -39,9 +39,11 @@
           <div class="col-md-8">
             <div class="campaign-subheader">Gift List</div>
             {{#each suggestions}}
+            <div class="gift-tile bordered-box invite-box">
             <div class="media">
               <div class="media-left">
-              <button class="endorseGift btn btn-default" id={{_id}}>  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <h5>{{upvotes}}</h5> </button>
+              <button class="endorseGift btn btn-default" id="{{_id}}">  
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <h5>{{upvotes}}</h5> </button>
               </div>
               <div class="media-body">
                 <h4 class="media-heading">{{name}}
@@ -49,6 +51,7 @@
                 <p>{{description}}</p>
               </div>
             </div>
+          </div>
             {{/each}}
           </div>
           

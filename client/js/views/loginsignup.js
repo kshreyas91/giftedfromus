@@ -6,10 +6,11 @@ Meteor.startup(function() {
             event.preventDefault();
             var emailVar = event.target.loginEmail.value;
             var passwordVar = event.target.loginPassword.value;
+
             Meteor.loginWithPassword(emailVar, passwordVar);
-            Modal.hide('loginsignup');
             Router.go('home');
-//            $('#logIn').modal('hide');
+            Modal.hide('loginsignup');
+            $('#loginsignup').modal('hide');
         },
 
         'submit .registration-form': function(event) {

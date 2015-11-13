@@ -64,7 +64,7 @@ img.jumbotron {
 	.jumbotron-button{
 		position: absolute;
 		float:left;	
-		left: 58%;
+		left: 55%;
 		top: 75%;
 		z-index: 1000;
 		width: 20%;

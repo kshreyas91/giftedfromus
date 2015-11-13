@@ -4,7 +4,7 @@
     {{else}}
     {{/if}}
 
-	<div class="main-content">
+	<div class="main-content dashboard">
     <p class="dashboard-header">{{name}}'s Campaigns</p>
 
     <div class="col-md-12">
@@ -32,17 +32,19 @@
           Active Campaigns
         </div>
 
-          <div class="row">
+
               {{#each surprise}}
-                <div class="col-md-4">
+                <div class="col-md-4 campaign-tile">
+                  <a href="/campaign/{{_id}}">
                   <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded" >
-                  <h3>{{title}}
-                    <br><small>$500 raised</small></h3>
+                  <span class ="campaign-dashboard-title">{{title}}</span></a>
+                    <br>$500 raised
                   <p>{{description}}</p>
-                  <p><a class="btn btn-default" href="/campaign/{{_id}}" role="button">View Campaign</a></p>
+                  <a class="btn btn-sm btn-default center-btn" href="/campaign/{{_id}}" role="button">View Campaign</a>
                 </div>
               {{/each}}
-            </div>    
+
+
         <!--
         <table class = "table-hover">
           <thead>
@@ -75,8 +77,10 @@
         </table>
 
       -->
+    <div class="col-md-4 campaign-tile">
 
-        <button class="btn btn-success btn-large" style="float:right" href="#startANewCampaign" data-toggle="modal">Create New Campaign</button>
+        <button class="btn btn-success btn-large" style="text-align:center" href="#startANewCampaign" data-toggle="modal">Create New Campaign</button>
+        </div>
       </div>
     </div>
 
@@ -89,7 +93,8 @@
     (on track to reach goal?)
 -->
 
-    <div class="col-md-12">
+
+    <div class="col-md-10 col-md-offset-1">
       <div class="dashboard-section">
         <div class="dashboard-section-header">
           Campaign: In Review
@@ -99,6 +104,8 @@
             <img src ="../img/graph.png">
         </div>
     </div>
+  </div>
+
 
   
 
@@ -138,12 +145,7 @@
       </div>
     </div>
 
-</div>
-
 
 </div>
-
->>>>>>> newpage
-
 
 </template>
