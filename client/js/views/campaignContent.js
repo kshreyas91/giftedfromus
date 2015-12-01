@@ -29,9 +29,31 @@ Meteor.startup(function() {
 
     suggestions: function() {
       return GiftSuggestions.find({forCampaign:Session.get('templateData').id}, {sort :{upvotes:-1}});
+    },
 
+
+    pledgedAmount: function(){
+      pledgedTotal = 0;
+
+      Pledge.find({campaignId:Session.get('templateData').id}).map(function(doc){
+        pledgedTotal += doc.pledgeAmount;
+      });
+
+      return pledgedTotal;
+    },
+
+    pastPledges: function() {
+      return Pledge.find({campaignId:Session.get('templateData').id});
     }
+
   });
+
+Pledge.helpers({
+  pledger: function(){
+    return Meteor.users.findOne(this.pledgedBy);
+  }
+});
+
   Template.campaignContent.events({
   'click .endorseGift' : function(event) {
     var suggestionId = event.target.id;

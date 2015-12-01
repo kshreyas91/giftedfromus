@@ -10,28 +10,34 @@
     <div class="col-md-12">
       <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
            <span class="dashboard-stats-header">Total Campaigns</span>
-           <p class = "dashboard-stats-count">25</p>         
+           <p class = "dashboard-stats-count">{{totalCampaigns}}</p>         
       </div>
       <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
           <span class="dashboard-stats-header">Active Campaigns</span>
-          <p class = "dashboard-stats-count">25</p>
+          <p class = "dashboard-stats-count">{{totalActiveCampaigns}}</p>
       </div>
       <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
           <span class="dashboard-stats-header">Ended Campaigns</span>
-          <p class = "dashboard-stats-count">25</p>
+          <p class = "dashboard-stats-count">{{totalEndedCampaigns}}</p>
       </div>
       <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
           <span class="dashboard-stats-header">% Fully Funded</span>
-          <p class = "dashboard-stats-count">25</p>
+          <p class = "dashboard-stats-count">{{percentFunded}}</p>
       </div>
     </div>
 
     <div class = "col-md-12">
       <div class="dashboard-section">
-        <div class="dashboard-section-header">
+        <div id="container">
+        <div class="dashboard-section-header" id="left">
           Active Campaigns
         </div>
 
+
+        <div id="right">        
+          <button class="btn btn-success btn-large" style="text-align:center" href="#startANewCampaign" data-toggle="modal">Create New Campaign</button>
+        </div>
+      </div>
 
               {{#each surprise}}
                 <div class="col-md-4 campaign-tile">
@@ -79,7 +85,7 @@
       -->
     <div class="col-md-4 campaign-tile">
 
-        <button class="btn btn-success btn-large" style="text-align:center" href="#startANewCampaign" data-toggle="modal">Create New Campaign</button>
+
         </div>
       </div>
     </div>

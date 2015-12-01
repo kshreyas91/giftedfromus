@@ -17,7 +17,11 @@
             <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">-->
             {{#if currentUser}}
             <li class="nav navbar-nav navbar-right">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="profilepic" src="/img/users/profile1.png"> {{name}} <span class="caret"></span></a>
+<!--                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">-->
+                  <b><img class="profilepic" src="/img/users/avatar.gif"> {{name}} </b>
+                  <!--
+                  <span class="caret"></span>
+                </a>
                 <ul class="dropdown-menu">
                   <li><a href="/home">MY CAMPAIGNS</a></li>
                   <li><a href="#startANewCampaign" data-toggle="modal">START NEW CAMPAIGN</a></li>
@@ -25,13 +29,14 @@
                   <li><a href="#">SETTINGS</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a class ="logout" href="#">LOG OUT</a></li>
-                </ul>
+                </ul>-->
+
             </li>
             {{else}}
             <div class="nav navbar-nav navbar-right">
               
-              <a href="#loginsignup" data-toggle="modal" class="nav-links signup-link">SIGN UP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="#loginsignup" data-toggle="modal" class="nav-links login-link">LOG IN</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#Loginsignup" data-toggle="modal" class="nav-links signup-link">SIGN UP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#Loginsignup" data-toggle="modal" class="nav-links login-link">LOG IN</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
             {{/if}}
             

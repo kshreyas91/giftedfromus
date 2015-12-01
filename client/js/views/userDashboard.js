@@ -23,8 +23,25 @@ Meteor.startup(function() {
 
     surprise: function(){
           return Surprises.find({createdBy:Meteor.userId()}, {sort: {name: 1}});
-      }
-    }
+      },
+
+    totalCampaigns:function(){
+      return Surprises.find({createdBy:Meteor.userId()}).count();
+    },
+
+    totalActiveCampaigns:function(){
+      return Surprises.find({createdBy:Meteor.userId()}).count();
+    },
+
+    totalEndedCampaigns:function(){
+      return Surprises.find({createdBy:Meteor.userId()}).count();
+    },
+
+    percentFunded:function(){
+      return Surprises.find({createdBy:Meteor.userId()}).count();
+    },
+
+  }
 
   );
 

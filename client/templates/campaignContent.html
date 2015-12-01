@@ -10,14 +10,14 @@
             
             <div class="row">
               <div class="col-md-8">
-                <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded" >
+                <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded campaign-img" >
               </div>
               <div class="bordered-box col-md-4">
                <div class="campaign-subheader">Let's celebrate {{name}}!</div>
 
                <p>{{description}}</p>
 
-               <h3 class = "pledge">$99.42<small>pledged</small></h3>
+               <h3 class = "pledge">${{pledgedAmount}} <small>pledged</small></h3>
                <div class= "row">
               </div>
                <div class="progress">
@@ -28,7 +28,6 @@
 
                <div class="centered">
               <p><a class="btn btn-lg btn-success" role="button" data-toggle="modal" data-target="#pledgeMoney">Pledge Today!</a></p>
-              <p><a class="btn btn-lg btn-primary" role="button" data-toggle="modal" data-target="#suggestGift">Suggest New Gift</a></p>
             </div>
             </div>
           </div>
@@ -37,7 +36,11 @@
         
         <div class = "row">
           <div class="col-md-8">
-            <div class="campaign-subheader">Gift List</div>
+            <div id = "container">
+            <div class="campaign-subheader" id="left">Gift List</div>
+            <p><a class="btn btn-success right" role="button" data-toggle="modal" data-target="#suggestGift" id="right">Suggest New Gift</a></p>
+
+          </div>
             {{#each suggestions}}
             <div class="gift-tile bordered-box invite-box">
             <div class="media">
@@ -54,8 +57,10 @@
           </div>
             {{/each}}
           </div>
+
+          <div class="col-md-4 no-padding">
           
-          <div class="col-md-4 invite-box">
+          <div class="invite-box">
               <div class = "campaign-subheader">Public Link</div>
               <form class="form-inline">
                 <div class="form-group">
@@ -66,16 +71,22 @@
             </div>
 
             <br>
-            <div class="col-md-4 invite-box">
+            <div class="invite-box">
               <div class="campaign-subheader">Previous Pledges</div>
                 <ul class="list-group">
+                  {{#each pastPledges}}
+                  <li class="list-group-item"><img class="profilepic" src="/img/users/avatar.gif">{{pledgeAmount}} by {{pledger.profile.name}}</li>
+                  {{/each}}
+                  <!--
                   <li class="list-group-item"><img class="profilepic" src="/img/users/profile1.png">Peter Prosciutto</li>
                   <li class="list-group-item"><img class="profilepic" src="/img/users/profile2.png">Sal Sausage</li>
                   <li class="list-group-item"><img class="profilepic" src="/img/users/profile3.png">Timothy Tenderloin</li>
                   <li class="list-group-item"><img class="profilepic" src="/img/users/profile4.png">Freddy Filet</li>
-                  <li class="list-group-item"><img class="profilepic" src="/img/users/profile5.png">Kim Kielbasa</li>
+                  <li class="list-group-item"><img class="profilepic" src="/img/users/profile5.png">Kim Kielbasa</li>-->
                 </ul>
             </div>
+
+          </div>
         </div>
 
         <!-- PLEDGE MONEY - Frank -->
