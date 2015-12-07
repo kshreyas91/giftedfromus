@@ -9,12 +9,12 @@ Meteor.startup(function() {
       event.preventDefault();
       var formCampaignTitle = event.target.formCampaignTitle.value;
       var formGifteeName = event.target.formGifteeName.value;
-      var formBirthday = event.target.formBirthday.value;
-      var formCampaignDate = event.target.formCampaignDate.value;
+      var formCampaignDate = new Date(event.target.formCampaignDate.value);
+      var formCampaignEndDate = new Date(event.target.formCampaignEndDate.value);
       var formCampaignDesc = event.target.formCampaignDesc.value;
       var createdBy = Meteor.userId();
 
-      var id= Surprises.insert({title: formCampaignTitle, name: formGifteeName, description: formCampaignDesc, date: formCampaignDate, endDate: formCampaignDate, createdBy: createdBy});
+      var id= Surprises.insert({title: formCampaignTitle, name: formGifteeName, description: formCampaignDesc, date: formCampaignDate, endDate: formCampaignEndDate, createdBy: createdBy});
       //document.getElementById('showPublicURL').innerHTML = (location.origin + "/campaign/" +id);
       window.location.href = (location.origin + "/campaign/" +id);
     },

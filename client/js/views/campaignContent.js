@@ -1,5 +1,6 @@
 Meteor.startup(function() {
 
+
   var getId = function() {
     var templateData;
     templateData = Session.get('templateData');
@@ -31,10 +32,26 @@ Meteor.startup(function() {
       return GiftSuggestions.find({forCampaign:Session.get('templateData').id}, {sort :{upvotes:-1}});
     },
 
+    campaignDate: function() {
+      var campaignData = Surprises.findOne({_id:Session.get('templateData').id});
+      return campaignData.date.toDateString();;
+    },
+
+    campaignEndDate: function() {
+      var campaignData = Surprises.findOne({_id:Session.get('templateData').id});
+      return campaignData.endDate.toDateString();;
+    },
+
+    daysLeft: function() {
+      var campaignData = Surprises.findOne({_id:Session.get('templateData').id});
+      var currentDate = new Date();
+      var endDate = campaignData.endDate;
+      var diffDays = Math.round(Math.abs((currentDate.getTime() - endDate.getTime())/(24*60*60*1000)));
+      return diffDays;
+    },
 
     pledgedAmount: function(){
       pledgedTotal = 0;
-
       Pledge.find({campaignId:Session.get('templateData').id}).map(function(doc){
         pledgedTotal += doc.pledgeAmount;
       });
@@ -45,6 +62,8 @@ Meteor.startup(function() {
     pastPledges: function() {
       return Pledge.find({campaignId:Session.get('templateData').id});
     }
+
+
 
   });
 
@@ -63,3 +82,6 @@ Pledge.helpers({
   }
   });
 });
+
+
+

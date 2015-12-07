@@ -3,7 +3,7 @@
         <div class = "row">
           <div class="campaign-header">
             <h1>{{title}}</h1>
-            <p class="lead"><strong>Gift Date:</strong> {{date}} &nbsp;&nbsp;|&nbsp;&nbsp;<strong>Campaign Ends:</strong> {{endDate}} </p>
+            <p class="lead"><strong>Gift Date:</strong> {{campaignDate}} &nbsp;&nbsp;|&nbsp;&nbsp;<strong>Campaign Ends:</strong> {{campaignEndDate}} </p>
 
             </div>
           </div>
@@ -22,7 +22,7 @@
               </div>
                <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                  Campaign Ends on {{endDate}}
+                  Campaign ends in {{daysLeft}} days
                 </div>
                </div>
 
@@ -66,7 +66,7 @@
                 <div class="form-group">
                   <input type="text" class="form-control" id="publiclink" value="{{publicURL}}">
                 </div>
-                <button type="button" class="btn btn-default">Copy Link</button>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{publicURL}}" role="button" class="btn btn-default"><i class="fa fa-facebook"></i></a>
               </form>
             </div>
 
