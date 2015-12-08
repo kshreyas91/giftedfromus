@@ -39,7 +39,25 @@ Meteor.startup(function() {
     },
 
     percentFunded:function(){
-      return Surprises.find({createdBy:Meteor.userId()}).count();
+      fundedSurprises = 0;
+
+      Surprises.find({createdBy:Meteor.userId()}).map(function(doc){
+
+        pledgedTotal = 0;
+
+        Pledge.find({campaignId:doc._id}).map(function(doc2){
+          pledgedTotal += doc2.pledgeAmount;
+        });
+
+        if (pledgedTotal > doc.pledgeGoal){
+          fundedSurprises += 1;
+        }
+
+      });
+
+      totalCampaigns = Surprises.find({createdBy:Meteor.userId()}).count();
+
+      return Math.round(fundedSurprises/totalCampaigns * 100);
     },
 
 
