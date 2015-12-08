@@ -124,22 +124,22 @@
         <table class = "table-hover">
           <thead>
             <tr>
-              <th>#</th>
+              <th>Link</th>
               <th>Ended Campaign Name</th>
               <th>Giftee Name</th>
               <th>End Date</th>
-              <th>Gift Selected</th>
+              <th>Money Raised</th>
               <th>Ask for feedback</th>
             </tr>
           </thead>
           <tbody>
             {{#each surprise}}
             <tr>
-              <td>1</td>
-              <td>Ended Campaign Name</td>
-              <td>Giftee Name</td>
-              <td>Date Ended</td>
-              <td>Selected Gift</td>
+              <td><a href="/campaign/{{_id}}"><i class="fa fa-external-link"></i></a></td>
+              <td>{{title}}</td>
+              <td>{{name}} </td>
+              <td>{{endDate}}</td>
+              <td>{{newField}}</td>
               <td>
                 <a href="mailto:Recipient@Email.com?subject=Did You Like Your Gift?&body=Hi! We recently sent you a gift through Gifted By Us! Did you like our gift? Feel free to let us know if you thought we should have gotten you another gift! Love, Us" title="Ask for Feedback"><i class="fa fa-reply"></i></a> 
               </td>
