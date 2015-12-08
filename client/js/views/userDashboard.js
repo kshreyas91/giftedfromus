@@ -22,7 +22,8 @@ Meteor.startup(function() {
     },
 
     surprise: function(){
-          return Surprises.find({createdBy:Meteor.userId()}, {sort: {name: 1}});
+          var surprise= Surprises.find({createdBy:Meteor.userId()}, {sort: {name: 1}});
+          return surprise;
       },
 
     totalCampaigns:function(){
