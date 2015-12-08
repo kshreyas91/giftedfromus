@@ -34,12 +34,12 @@ Meteor.startup(function() {
 
     campaignDate: function() {
       var campaignData = Surprises.findOne({_id:Session.get('templateData').id});
-      return campaignData.date.toDateString();;
+      return campaignData.date.toDateString();
     },
 
     campaignEndDate: function() {
       var campaignData = Surprises.findOne({_id:Session.get('templateData').id});
-      return campaignData.endDate.toDateString();;
+      return campaignData.endDate.toDateString();
     },
 
     daysLeft: function() {

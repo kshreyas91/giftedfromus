@@ -4,10 +4,11 @@
 	font-family: Arial, Helvetica, sans-serif;
 	padding: 15px 40px 0px 230px;
 	background-color: #e8e8e8;
+	min-height: 1200px;
 }
 
 .dashboard {
-	min-height:2000px;
+	min-height:1500px;
 }
 
 .main-content-no-sidebar{
