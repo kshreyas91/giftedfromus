@@ -44,7 +44,7 @@
                   <a href="/campaign/{{_id}}">
                   <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded" >
                   <span class ="campaign-dashboard-title">{{title}}</span></a>
-                    <br>$500 raised
+                    <br><b>${{pledgedAmount}} raised</b>
                   <p>{{description}}</p>
                   <a class="btn btn-sm btn-default center-btn" href="/campaign/{{_id}}" role="button">View Campaign</a>
                 </div>
@@ -135,7 +135,7 @@
               <td>{{title}}</td>
               <td>{{name}} </td>
               <td>{{endDate}}</td>
-              <td>{{newField}}</td>
+              <td>${{pledgedAmount}}</td>
               <td>
                 <a href="mailto:Recipient@Email.com?subject=Did You Like Your Gift?&body=Hi! We recently sent you a gift through Gifted By Us! Did you like our gift? Feel free to let us know if you thought we should have gotten you another gift! Love, Us" title="Ask for Feedback"><i class="fa fa-reply"></i></a> 
               </td>

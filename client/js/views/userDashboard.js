@@ -42,9 +42,22 @@ Meteor.startup(function() {
       return Surprises.find({createdBy:Meteor.userId()}).count();
     },
 
-  }
 
-  );
 
+  });
+
+_
+  Surprises.helpers({
+
+    pledgedAmount: function(){
+      pledgedTotal = 0;
+      Pledge.find({campaignId:this._id}).map(function(doc){
+          pledgedTotal += doc.pledgeAmount;
+      });
+
+      return pledgedTotal;
+    }
+  });
 
 });
+
