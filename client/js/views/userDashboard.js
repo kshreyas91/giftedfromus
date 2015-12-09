@@ -33,6 +33,22 @@ Meteor.startup(function() {
         return result;
       },
 
+     pledgedOnly: function(){
+        var result = new Array;
+        var d = new Date();
+   
+        Pledge.find({pledgedBy: Meteor.userId()}).map(function(doc){
+          Surprises.find({_id: doc.campaignId}).map(function(doc2) {
+            if ((doc2.createdBy != Meteor.userId()) && (doc2.endDate >=d)) {
+              console.log(doc2.name);
+              result.push(doc2);
+            };
+          });
+        });
+
+        return result;
+      },
+
     endedSurprise: function(){
         var result = new Array;
         var surprise= Surprises.find({createdBy:Meteor.userId()});
@@ -132,7 +148,7 @@ Template.userDashboard.rendered = function drawChart() {
       }
     });
 
-    console.log(pledgeData);
+    //console.log(pledgeData);
 
     var data = [];
 
@@ -141,7 +157,7 @@ Template.userDashboard.rendered = function drawChart() {
         data.push(newObj);
     }
 
-    console.log(data);  
+    //console.log(data);  
 
     if (data) {
         new Morris.Donut({

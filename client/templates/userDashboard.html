@@ -31,7 +31,7 @@
       <div class="dashboard-section">
         <div id="container">
         <div class="dashboard-section-header" id="left">
-          Active Campaigns
+          Active Owned Campaigns
         </div>
 
 
@@ -55,28 +55,10 @@
     </div>
 
 
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="dashboard-section">
         <div class="dashboard-section-header">
-          Your Pledges
-        </div>
-
-        <p class = "dashboard-subheader">You have pledged <b>${{userPledges}}</b> so far across all campaigns! Keep up the good work!</p>
-        <div id="myfirstchart" style="height:280px">
-          {{drawChart}}
-            <!--<img src ="../img/graph.png">-->
-        </div>
-    </div>
-  </div>
-
-
-  
-
-
-    <div class="col-md-6">
-      <div class="dashboard-section">
-        <div class="dashboard-section-header">
-          Ended Campaigns
+          Ended Owned Campaigns
         </div>
         <table class = "table-hover">
           <thead>
@@ -107,6 +89,45 @@
 
       </div>
     </div>
+
+     <div class = "col-md-6">
+      <div class="dashboard-section">
+        <div class="dashboard-section-header">
+          Campaigns You'ved Pledged In
+        </div>
+
+              {{#each pledgedOnly}}
+                <div class="col-md-6 campaign-tile">
+                  <a href="/campaign/{{_id}}">
+                  <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded" >
+                  <span class ="campaign-dashboard-title">{{title}}</span></a>
+                    <br><b>${{pledgedAmount}} raised</b>
+                  <p>{{description}}</p>
+                  <a class="btn btn-sm btn-default center-btn" href="/campaign/{{_id}}" role="button">View Campaign</a>
+                </div>
+              {{/each}}
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="dashboard-section">
+        <div class="dashboard-section-header">
+          Your Pledges
+        </div>
+
+        <p class = "dashboard-subheader">You have pledged <b>${{userPledges}}</b> so far across all campaigns! Keep up the good work!</p>
+        <div id="myfirstchart" style="height:280px">
+          {{drawChart}}
+            <!--<img src ="../img/graph.png">-->
+        </div>
+    </div>
+  </div>
+
+
+  
+
+
 
 
 </div>
