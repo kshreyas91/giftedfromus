@@ -22,20 +22,60 @@ Meteor.startup(function() {
     },
 
     surprise: function(){
-          var surprise= Surprises.find({createdBy:Meteor.userId()}, {sort: {name: 1}});
-          return surprise;
+        var result = new Array;
+        var surprise= Surprises.find({createdBy:Meteor.userId()});
+        var d = new Date();
+        Surprises.find({createdBy:Meteor.userId()}).map(function(doc) {
+          if (doc.endDate>=d) {
+            result.push(doc) ;
+          }
+        });
+        return result;
       },
 
-    totalCampaigns:function(){
-      return Surprises.find({createdBy:Meteor.userId()}).count();
+    endedSurprise: function(){
+        var result = new Array;
+        var surprise= Surprises.find({createdBy:Meteor.userId()});
+        var d = new Date();
+        Surprises.find({createdBy:Meteor.userId()}).map(function(doc) {
+          if (doc.endDate<d) {
+            result.push(doc) ;
+          }
+        });
+        return result;
+      },
+
+    totalRaised:function(){
+      pledgedTotal = 0;
+      Surprises.find({createdBy:Meteor.userId()}).map(function(doc){
+        Pledge.find({campaignId:doc._id}).map(function(doc2){
+          pledgedTotal += doc2.pledgeAmount;
+        });
+      });
+
+      return pledgedTotal;
     },
 
     totalActiveCampaigns:function(){
-      return Surprises.find({createdBy:Meteor.userId()}).count();
+      totalActiveCampaigns = 0;
+      var d = new Date();
+      Surprises.find({createdBy:Meteor.userId()}).map(function(doc) {
+        if (doc.endDate>=d) {
+          totalActiveCampaigns+=1;
+        }
+      });
+      return totalActiveCampaigns;
     },
 
     totalEndedCampaigns:function(){
-      return Surprises.find({createdBy:Meteor.userId()}).count();
+      totalEndedCampaigns = 0;
+      var d = new Date();
+      Surprises.find({createdBy:Meteor.userId()}).map(function(doc) {
+        if (doc.endDate<d) {
+          totalEndedCampaigns+=1;
+        }
+      });
+      return totalEndedCampaigns;
     },
 
     percentFunded:function(){

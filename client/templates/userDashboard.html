@@ -8,10 +8,7 @@
     <p class="dashboard-header">{{name}}'s Campaigns</p>
 
     <div class="col-md-12">
-      <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
-           <span class="dashboard-stats-header">Total Campaigns</span>
-           <p class = "dashboard-stats-count">{{totalCampaigns}}</p>         
-      </div>
+      
       <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
           <span class="dashboard-stats-header">Active Campaigns</span>
           <p class = "dashboard-stats-count">{{totalActiveCampaigns}}</p>
@@ -23,6 +20,10 @@
       <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
           <span class="dashboard-stats-header">% Fully Funded</span>
           <p class = "dashboard-stats-count">{{percentFunded}}%</p>
+      </div>
+      <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
+           <span class="dashboard-stats-header">Total Amount Raised</span>
+           <p class = "dashboard-stats-count">${{totalRaised}}</p>         
       </div>
     </div>
 
@@ -89,7 +90,7 @@
             </tr>
           </thead>
           <tbody>
-            {{#each surprise}}
+            {{#each endedSurprise}}
             <tr>
               <td><a href="/campaign/{{_id}}"><i class="fa fa-external-link"></i></a></td>
               <td>{{title}}</td>
