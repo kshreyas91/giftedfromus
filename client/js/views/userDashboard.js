@@ -60,9 +60,57 @@ Meteor.startup(function() {
       return Math.round(fundedSurprises/totalCampaigns * 100);
     },
 
+    userPledges:function(){
+      var userPledges = 0;
+
+      Pledge.find({pledgedBy: Meteor.userId()}).map(function(doc){
+        userPledges += doc.pledgeAmount;
+      });
+
+      return userPledges;
+    }
 
 
   });
+
+Template.userDashboard.rendered = function drawChart() {
+    //clear the contents of the div, in the event this function is called more than once.
+    $('#myfirstchart').empty();
+
+    var pledgeData = {};
+
+    Pledge.find({pledgedBy: Meteor.userId()}).map(function(doc){
+      var surpriseId = doc.campaignId;
+
+      var surprise = Surprises.findOne({_id:surpriseId}).title;
+
+      var pledgeAmount = doc.pledgeAmount;
+      if (surprise in pledgeData){
+        pledgeData[surprise] += pledgeAmount;
+      } else {
+        pledgeData[surprise] = pledgeAmount;
+      }
+    });
+
+    console.log(pledgeData);
+
+    var data = [];
+
+    for (key in pledgeData){
+        var newObj = {label: key, value:pledgeData[key]};
+        data.push(newObj);
+    }
+
+    console.log(data);  
+
+    if (data) {
+        new Morris.Donut({
+            element: 'myfirstchart',
+            data:    data
+        });
+
+      }
+  }
 
 _
   Surprises.helpers({

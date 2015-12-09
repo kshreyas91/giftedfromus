@@ -50,60 +50,20 @@
                 </div>
               {{/each}}
 
-
-        <!--
-        <table class = "table-hover">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Campaign Name</th>
-              <th>Pledge Goal</th>
-              <th>End Date</th>
-              <th>Pledged / Invited</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each surprise}}
-            <tr>
-              <td>1</td>
-              <td> 
-                <a href="/campaign/{{_id}}">{{title}}</a>
-              </td>
-              <td>$2000</td>
-              <td>{{endDate}}</td>
-              <td>20/50</td>
-              <td>
-                <a href="#" title="Email Invitees"><i class="fa fa-envelope"></i></a>&nbsp;
-                <a href="#" title="Delete Active Campaign"><i class="fa fa-trash-o"></i></a> 
-              </td>
-            </tr>
-            {{/each}}
-          </tbody>
-        </table>
-
-      -->
       </div>
     </div>
-
-
-<!-- 
-    GRAPHS
-    1) Per campaign: Number of invitees over time
-    2) Per campaign: Amount pledged over time
-
-    (on track to reach goal?)
--->
 
 
     <div class="col-md-6">
       <div class="dashboard-section">
         <div class="dashboard-section-header">
-          Campaign: In Review
+          Your Pledges
         </div>
 
-        <div class="demo-container" style="height:280px">
-            <img src ="../img/graph.png">
+        <p class = "dashboard-subheader">You have pledged <b>${{userPledges}}</b> so far across all campaigns! Keep up the good work!</p>
+        <div id="myfirstchart" style="height:280px">
+          {{drawChart}}
+            <!--<img src ="../img/graph.png">-->
         </div>
     </div>
   </div>

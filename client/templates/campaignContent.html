@@ -11,32 +11,8 @@
             <div class="row">
               <div class="col-md-8">
                 <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded campaign-img" >
-              </div>
-              <div class="bordered-box col-md-4">
-               <div class="campaign-subheader">Let's celebrate {{name}}!</div>
 
-               <p>{{description}}</p>
-
-               <h3 class = "pledge">${{pledgedAmount}} <small>pledged</small></h3>
-               <div class= "row">
-              </div>
-               <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                  Campaign ends in {{daysLeft}} days
-                </div>
-               </div>
-
-               <div class="centered">
-              <p><a class="btn btn-lg btn-success" role="button" data-toggle="modal" data-target="#pledgeMoney">Pledge Today!</a></p>
-            </div>
-            </div>
-          </div>
-
-          <br><br>
-        
-        <div class = "row">
-          <div class="col-md-8">
-            <div id = "container">
+                <div id = "container">
             <div class="campaign-subheader" id="left">Gift List</div>
             <p><a class="btn btn-success right" role="button" data-toggle="modal" data-target="#suggestGift" id="right">Suggest New Gift</a></p>
 
@@ -56,16 +32,34 @@
             </div>
           </div>
             {{/each}}
+              </div>
+              <div class="col-md-4">
+                <div class="bordered-box">
+               <div class="campaign-subheader">Let's celebrate {{name}}!</div>
+
+               <p>{{description}}</p>
+
+               <h3 class = "pledge">${{pledgedAmount}} <small>pledged</small></h3>
+               <div class= "row">
+              </div>
+               <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                  Campaign ends in {{daysLeft}} days
+                </div>
+               </div>
+
+               <div class="centered">
+              <p><a class="btn btn-lg btn-success" role="button" data-toggle="modal" data-target="#pledgeMoney">Pledge Today!</a></p>
+            </div>
           </div>
 
-          <div class="col-md-4 no-padding">
-          
-          <div class="invite-box">
+            <div class="invite-box">
               <div class = "campaign-subheader">Public Link</div>
               <form class="form-inline">
                 <div class="form-group">
                   <input type="text" class="form-control" id="publiclink" value="{{publicURL}}">
                 </div>
+                <br>
                 <a href="https://www.facebook.com/sharer/sharer.php?u={{publicURL}}" role="button" class="btn btn-default"><i class="fa fa-facebook"></i></a>
                 <a href="mailto:Recipient@Email.com?subject=Did You Like Your Gift?&body=Hi! We recently sent you a gift through Gifted By Us! Did you like our gift? Feel free to let us know if you thought we should have gotten you another gift! Love, Us" title="Ask for Feedback" role="button" class="btn btn-default"><i class="fa fa-envelope-o"></i></a>
               </form>
@@ -76,7 +70,7 @@
               <div class="campaign-subheader">Previous Pledges</div>
                 <ul class="list-group">
                   {{#each pastPledges}}
-                  <li class="list-group-item"><img class="profilepic" src="/img/users/avatar.gif">{{pledgeAmount}} by {{pledger.profile.name}}</li>
+                  <li class="list-group-item"><img class="profilepic" src="/img/users/avatar.gif">{{pledgeAmount}} by {{name}}</li>
                   {{/each}}
                   <!--
                   <li class="list-group-item"><img class="profilepic" src="/img/users/profile1.png">Peter Prosciutto</li>
@@ -88,8 +82,12 @@
             </div>
 
           </div>
-        </div>
 
+          </div>
+
+
+          <br><br>
+        
         <!-- PLEDGE MONEY - Frank -->
         <div class="modal fade" id="pledgeMoney" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">

@@ -69,16 +69,37 @@ Meteor.startup(function() {
 
 Pledge.helpers({
   pledger: function(){
-    return Meteor.users.findOne(this.pledgedBy);
+//    name = Meteor.users.findOne({_id:this.pledgedBy}).profile.name;
+ //   Meteor.users.find().map(function(doc){
+ //     console.log(doc);
+ //   });
+
+//    Meteor.users.find({_id:this.pledgedBy}).map(function(doc){
+//      console.log(doc);
+//    });
+ //   return "abc";
+ //   return name;
+
+    if (Meteor.isClient){
+      return Meteor.subscribe("findPledger");
+    }
+
+    if (Meteor.isServer){
+      Meteor.publish("findPledger", function(){
+        return Meteor.users.find().count();
+
+        //return Meteor.users.findOne({_id:this.pledgedBy});
+      });
+    }
+//    return Meteor.users.findOne(this.pledgedBy);
   }
 });
 
   Template.campaignContent.events({
   'click .endorseGift' : function(event) {
     var suggestionId = event.target.id;
-    var up= GiftSuggestions.findOne({_id:suggestionId}).upvotes
+    var up= GiftSuggestions.findOne({_id:suggestionId}).upvotes;
     GiftSuggestions.update({_id:suggestionId}, {$set: {upvotes:up+1}});
-  
   }
   });
 });
