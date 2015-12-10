@@ -4,7 +4,7 @@ var Pledge = new Meteor.Collection("pledges");
 
 // Publish the collection to the client
 Meteor.publish("pledges", function() {
-  return GiftSuggestions.find();
+  return Pledge.find();
 });
 
 // Set permissions on this collection
@@ -18,6 +18,7 @@ insert: function(userId, doc) {
   }
 
 });
+
 
 // What to do when the server first starts up
 Meteor.startup(function() {

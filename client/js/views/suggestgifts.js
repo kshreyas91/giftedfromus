@@ -9,5 +9,9 @@ Template.suggestgift.events({
         var suggestedBy = Meteor.userId();
         var upvotes = 0;
         GiftSuggestions.insert({name: name, price:price, description:desc, forCampaign:campaignId, suggestedBy:suggestedBy, upvotes:upvotes})
+
+        $("#suggestGift").hide();
+        $(".modal-backdrop").hide();
+
     }
 });

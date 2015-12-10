@@ -84,16 +84,22 @@ td{
 	position:relative;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	height:350px;
+	min-height: 375px;
 	border-bottom: 2px solid #f8f8f8;
 }
 
 .campaign-dashboard-title{
-	margin-top: 10px;
+	margin-top: 20px;
 	padding-top: 10px;
 	font-family: 'Helvetica';
 	font-weight: bold;
 	font-size: 20px;
-	line-height: 50px;
+}
+
+.dashboard-subheader{
+	font-family: 'Helvetica';
+	color: #444;
+	font-size: 18px;
+	text-align: center;
 }
 

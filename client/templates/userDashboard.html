@@ -8,132 +8,77 @@
     <p class="dashboard-header">{{name}}'s Campaigns</p>
 
     <div class="col-md-12">
-      <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
-           <span class="dashboard-stats-header">Total Campaigns</span>
-           <p class = "dashboard-stats-count">25</p>         
-      </div>
+      
       <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
           <span class="dashboard-stats-header">Active Campaigns</span>
-          <p class = "dashboard-stats-count">25</p>
+          <p class = "dashboard-stats-count">{{totalActiveCampaigns}}</p>
       </div>
       <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
           <span class="dashboard-stats-header">Ended Campaigns</span>
-          <p class = "dashboard-stats-count">25</p>
+          <p class = "dashboard-stats-count">{{totalEndedCampaigns}}</p>
       </div>
       <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
           <span class="dashboard-stats-header">% Fully Funded</span>
-          <p class = "dashboard-stats-count">25</p>
+          <p class = "dashboard-stats-count">{{percentFunded}}%</p>
+      </div>
+      <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
+           <span class="dashboard-stats-header">Total Amount Raised</span>
+           <p class = "dashboard-stats-count">${{totalRaised}}</p>         
       </div>
     </div>
 
     <div class = "col-md-12">
       <div class="dashboard-section">
-        <div class="dashboard-section-header">
-          Active Campaigns
+        <div id="container">
+        <div class="dashboard-section-header" id="left">
+          Active Owned Campaigns
         </div>
 
+
+        <div id="right">        
+          <button class="btn btn-success btn-large" style="text-align:center" href="#startANewCampaign" data-toggle="modal">Create New Campaign</button>
+        </div>
+      </div>
 
               {{#each surprise}}
                 <div class="col-md-4 campaign-tile">
                   <a href="/campaign/{{_id}}">
                   <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded" >
                   <span class ="campaign-dashboard-title">{{title}}</span></a>
-                    <br>$500 raised
+                    <br><b>${{pledgedAmount}} raised</b>
                   <p>{{description}}</p>
                   <a class="btn btn-sm btn-default center-btn" href="/campaign/{{_id}}" role="button">View Campaign</a>
                 </div>
               {{/each}}
 
-
-        <!--
-        <table class = "table-hover">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Campaign Name</th>
-              <th>Pledge Goal</th>
-              <th>End Date</th>
-              <th>Pledged / Invited</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each surprise}}
-            <tr>
-              <td>1</td>
-              <td> 
-                <a href="/campaign/{{_id}}">{{title}}</a>
-              </td>
-              <td>$2000</td>
-              <td>{{endDate}}</td>
-              <td>20/50</td>
-              <td>
-                <a href="#" title="Email Invitees"><i class="fa fa-envelope"></i></a>&nbsp;
-                <a href="#" title="Delete Active Campaign"><i class="fa fa-trash-o"></i></a> 
-              </td>
-            </tr>
-            {{/each}}
-          </tbody>
-        </table>
-
-      -->
-    <div class="col-md-4 campaign-tile">
-
-        <button class="btn btn-success btn-large" style="text-align:center" href="#startANewCampaign" data-toggle="modal">Create New Campaign</button>
-        </div>
       </div>
     </div>
-
-
-<!-- 
-    GRAPHS
-    1) Per campaign: Number of invitees over time
-    2) Per campaign: Amount pledged over time
-
-    (on track to reach goal?)
--->
-
-
-    <div class="col-md-10 col-md-offset-1">
-      <div class="dashboard-section">
-        <div class="dashboard-section-header">
-          Campaign: In Review
-        </div>
-
-        <div class="demo-container" style="height:280px">
-            <img src ="../img/graph.png">
-        </div>
-    </div>
-  </div>
-
-
-  
 
 
     <div class="col-md-12">
       <div class="dashboard-section">
         <div class="dashboard-section-header">
-          Ended Campaigns
+          Ended Owned Campaigns
         </div>
         <table class = "table-hover">
           <thead>
             <tr>
-              <th>#</th>
+              <th>Link</th>
               <th>Ended Campaign Name</th>
               <th>Giftee Name</th>
               <th>End Date</th>
-              <th>Gift Selected</th>
+              <th>Money Raised</th>
               <th>Ask for feedback</th>
             </tr>
           </thead>
           <tbody>
-            {{#each surprise}}
+            {{#each endedSurprise}}
             <tr>
-              <td>1</td>
-              <td>Ended Campaign Name</td>
-              <td>Giftee Name</td>
-              <td>Date Ended</td>
-              <td>Selected Gift</td>
+              <td><a href="/campaign/{{_id}}"><i class="fa fa-external-link"></i></a></td>
+              <td>{{title}}</td>
+              <td>{{name}} </td>
+              <td>{{endDate}}</td>
+              <td>${{pledgedAmount}}</td>
               <td>
                 <a href="mailto:Recipient@Email.com?subject=Did You Like Your Gift?&body=Hi! We recently sent you a gift through Gifted By Us! Did you like our gift? Feel free to let us know if you thought we should have gotten you another gift! Love, Us" title="Ask for Feedback"><i class="fa fa-reply"></i></a> 
               </td>
@@ -144,6 +89,45 @@
 
       </div>
     </div>
+
+     <div class = "col-md-6">
+      <div class="dashboard-section">
+        <div class="dashboard-section-header">
+          Campaigns You'ved Pledged In
+        </div>
+
+              {{#each pledgedOnly}}
+                <div class="col-md-6 campaign-tile">
+                  <a href="/campaign/{{_id}}">
+                  <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded" >
+                  <span class ="campaign-dashboard-title">{{title}}</span></a>
+                    <br><b>${{pledgedAmount}} raised</b>
+                  <p>{{description}}</p>
+                  <a class="btn btn-sm btn-default center-btn" href="/campaign/{{_id}}" role="button">View Campaign</a>
+                </div>
+              {{/each}}
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="dashboard-section">
+        <div class="dashboard-section-header">
+          Your Pledges
+        </div>
+
+        <p class = "dashboard-subheader">You have pledged <b>${{userPledges}}</b> so far across all campaigns! Keep up the good work!</p>
+        <div id="myfirstchart" style="height:280px">
+          {{drawChart}}
+            <!--<img src ="../img/graph.png">-->
+        </div>
+    </div>
+  </div>
+
+
+  
+
+
 
 
 </div>
