@@ -28,7 +28,9 @@ peppelg:bootstrap-3-modal
 # twbs:bootstrap
 dburles:collection-helpers
 bshamblen:morrisjs
-email
+<<<<<<< HEAD
+tinytest
+=======
 sanjo:jasmine
 velocity:console-reporter
-tinytest
+>>>>>>> 9b38ee1533d52ba3f2ff7953f5d7cb0ac4517eb6
