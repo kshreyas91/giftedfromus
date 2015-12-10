@@ -31,7 +31,7 @@ ejson@1.0.7
 email@1.0.8
 fastclick@1.0.7
 geojson-utils@1.0.4
-giftedbyus:test@0.0.1
+giftedbyus:test@0.0.0
 hot-code-push@1.0.0
 html-tools@1.0.5
 htmljs@1.0.5
@@ -83,6 +83,7 @@ srp@1.0.4
 standard-minifiers@1.0.2
 templating@1.1.5
 templating-tools@1.0.0
+tinytest@1.0.6
 tracker@1.0.9
 ui@1.0.8
 underscore@1.0.4

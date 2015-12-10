@@ -1,4 +1,4 @@
-Modal.allowMultiple = true
+Modal.allowMultiple = true;
 
 Meteor.startup(function() {
     Template.loginsignup.events({

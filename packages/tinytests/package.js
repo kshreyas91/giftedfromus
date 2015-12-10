@@ -1,4 +1,5 @@
 Package.describe({
+  name: 'giftedbyus:test',
   summary: "Provides unit tests for leaderboard application.",
   internal: true
 });
