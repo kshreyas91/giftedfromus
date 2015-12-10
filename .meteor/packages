@@ -21,6 +21,12 @@ random
 ejson
 spacebars
 check
+<<<<<<< HEAD
 giftedfromus:test
 email
 http
+=======
+giftedbyus:test
+peppelg:bootstrap-3-modal
+# twbs:bootstrap
+>>>>>>> ddbf52aa3f7a7768f08252b305f05f7a7ebab8e9

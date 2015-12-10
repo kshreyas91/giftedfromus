@@ -9,6 +9,20 @@ Meteor.startup(function() {
         event.preventDefault();
         Meteor.logout();
         window.location.href = "/";
+    },
+
+    'click .signup-link': function(event){
+        $('ul.nav-tabs li:last-child').removeClass('active');
+        $('ul.nav-tabs li:first-child').addClass('active');
+        $('div.tab-content div.tab-pane:last-child').removeClass('active');
+        $('div.tab-content div.tab-pane:first-child').addClass('active');
+    },
+
+    'click .login-link': function(event){
+        $('ul.nav-tabs li:first-child').removeClass('active');
+        $('ul.nav-tabs li:last-child').addClass('active');
+        $('div.tab-content div.tab-pane:first-child').removeClass('active');
+        $('div.tab-content div.tab-pane:last-child').addClass('active');
     }
   });
 
@@ -24,5 +38,7 @@ Meteor.startup(function() {
         return '';
       }
     }
+
+
   });
 });

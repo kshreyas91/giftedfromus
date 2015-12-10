@@ -12,10 +12,21 @@ Meteor.startup(function() {
       });
 
   Template.userDashboard.helpers({
-     'surprise': function(){
+    name: function() {
+      if ((Meteor.userId() != null) && (Meteor.user() != null) && (Meteor.user().profile != null)) {
+        name = Meteor.user().profile.name;
+        return name.charAt(0).toUpperCase() + name.slice(1);
+      } else {
+        return '';
+      }
+    },
+
+    surprise: function(){
           return Surprises.find({createdBy:Meteor.userId()}, {sort: {name: 1}});
       }
-  });
+    }
+
+  );
 
 
 });

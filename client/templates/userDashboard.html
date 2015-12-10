@@ -1,19 +1,151 @@
 <template name="userDashboard">
-	<div class="container">
-    <h1>User dashboard will be populated here</h1>
+    {{#if currentUser}}
+      {{> sidebar}}
+    {{else}}
+    {{/if}}
 
-    <div>
-      <h2>All user planned suprises</h2> 
-      <ul>
-      {{#each surprise}}
-        <li><a href="/campaign/{{_id}}">{{title}}</a></li>
-      {{/each}}
-    </ul>
+	<div class="main-content dashboard">
+    <p class="dashboard-header">{{name}}'s Campaigns</p>
 
-    <input type="button" href="#startANewCampaign" data-toggle="modal"  value="Create New Surprise" />
+    <div class="col-md-12">
+      <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
+           <span class="dashboard-stats-header">Total Campaigns</span>
+           <p class = "dashboard-stats-count">25</p>         
+      </div>
+      <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
+          <span class="dashboard-stats-header">Active Campaigns</span>
+          <p class = "dashboard-stats-count">25</p>
+      </div>
+      <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
+          <span class="dashboard-stats-header">Ended Campaigns</span>
+          <p class = "dashboard-stats-count">25</p>
+      </div>
+      <div class = "col-md-3 col-sm-3 col-xs-3 dashboard-stats-section">
+          <span class="dashboard-stats-header">% Fully Funded</span>
+          <p class = "dashboard-stats-count">25</p>
+      </div>
+    </div>
 
+    <div class = "col-md-12">
+      <div class="dashboard-section">
+        <div class="dashboard-section-header">
+          Active Campaigns
+        </div>
+
+
+              {{#each surprise}}
+                <div class="col-md-4 campaign-tile">
+                  <a href="/campaign/{{_id}}">
+                  <img src="/img/bday.jpg" class="img-responsive width: 100% img-rounded" >
+                  <span class ="campaign-dashboard-title">{{title}}</span></a>
+                    <br>$500 raised
+                  <p>{{description}}</p>
+                  <a class="btn btn-sm btn-default center-btn" href="/campaign/{{_id}}" role="button">View Campaign</a>
+                </div>
+              {{/each}}
+
+
+        <!--
+        <table class = "table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Campaign Name</th>
+              <th>Pledge Goal</th>
+              <th>End Date</th>
+              <th>Pledged / Invited</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each surprise}}
+            <tr>
+              <td>1</td>
+              <td> 
+                <a href="/campaign/{{_id}}">{{title}}</a>
+              </td>
+              <td>$2000</td>
+              <td>{{endDate}}</td>
+              <td>20/50</td>
+              <td>
+                <a href="#" title="Email Invitees"><i class="fa fa-envelope"></i></a>&nbsp;
+                <a href="#" title="Delete Active Campaign"><i class="fa fa-trash-o"></i></a> 
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+
+      -->
+    <div class="col-md-4 campaign-tile">
+
+        <button class="btn btn-success btn-large" style="text-align:center" href="#startANewCampaign" data-toggle="modal">Create New Campaign</button>
+        </div>
+      </div>
+    </div>
+
+
+<!-- 
+    GRAPHS
+    1) Per campaign: Number of invitees over time
+    2) Per campaign: Amount pledged over time
+
+    (on track to reach goal?)
+-->
+
+
+    <div class="col-md-10 col-md-offset-1">
+      <div class="dashboard-section">
+        <div class="dashboard-section-header">
+          Campaign: In Review
+        </div>
+
+        <div class="demo-container" style="height:280px">
+            <img src ="../img/graph.png">
+        </div>
     </div>
   </div>
 
+
+  
+
+
+    <div class="col-md-12">
+      <div class="dashboard-section">
+        <div class="dashboard-section-header">
+          Ended Campaigns
+        </div>
+        <table class = "table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Ended Campaign Name</th>
+              <th>Giftee Name</th>
+              <th>End Date</th>
+              <th>Gift Selected</th>
+              <th>Ask for feedback</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each surprise}}
+            <tr>
+              <td>1</td>
+              <td>Ended Campaign Name</td>
+              <td>Giftee Name</td>
+              <td>Date Ended</td>
+              <td>Selected Gift</td>
+              <td>
+                <a href="mailto:Recipient@Email.com?subject=Did You Like Your Gift?&body=Hi! We recently sent you a gift through Gifted By Us! Did you like our gift? Feel free to let us know if you thought we should have gotten you another gift! Love, Us" title="Ask for Feedback"><i class="fa fa-reply"></i></a> 
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+
+</div>
 
 </template>
