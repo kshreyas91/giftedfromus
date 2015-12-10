@@ -19,9 +19,14 @@ Meteor.startup(function() {
     return -1;
   };
 
+  
+  
+
   Template.campaignContent.helpers({
     publicURL: document.URL,
-
+    mailContent: function(){
+      return ""
+    },
     data: function() {
       return Surprises.findOne({
         _id: getId()
@@ -100,7 +105,15 @@ Pledge.helpers({
     var suggestionId = event.target.id;
     var up= GiftSuggestions.findOne({_id:suggestionId}).upvotes;
     GiftSuggestions.update({_id:suggestionId}, {$set: {upvotes:up+1}});
-  }
+  },
+   'keyup #inviteeEmail' : function(event) {
+    userName = Meteor.user().profile.name;
+      var campaignData = Surprises.findOne({_id:Session.get('templateData').id});
+      gifteeName = campaignData.name;
+      mailText =  "mailto:"+ $( "#inviteeEmail" ).val() +"?subject=Time to gift " +  gifteeName +"?&body=Hi I am using GifteByUS to collectively gift " + gifteeName + ". It would be great if you can join us. You can visit the giftpage at \n" + document.URL + "\n" + "Here you can suggest gift, upvote the gifts you like and also pledge an amount for the gift. Lets all gift " + gifteeName + " an awesome gift! \n" + "Love, \n " + userName;
+      $("#mailBtn").attr('href', mailText)
+    console.log("change")
+   }
   });
 });
 
